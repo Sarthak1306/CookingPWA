@@ -1,9 +1,11 @@
+import json
 import sqlite3
 from pathlib import Path
 
 from app.config import settings
 
 MIGRATIONS_DIR = Path(__file__).resolve().parent.parent / "migrations"
+FIXTURES_DIR = Path(__file__).resolve().parent.parent / "fixtures"
 
 
 def get_connection() -> sqlite3.Connection:
@@ -43,5 +45,31 @@ def apply_migrations() -> list[str]:
             newly_applied.append(filename)
 
         return newly_applied
+    finally:
+        conn.close()
+
+
+def seed_canonical_ingredients() -> int:
+    """Load fixtures/canonical_ingredients.json on a fresh DB. No-op once
+    the table has any rows — this seeds the starter list, it doesn't sync
+    it, so hand-added or LLM-added ingredients are never touched."""
+    conn = get_connection()
+    try:
+        (count,) = conn.execute("SELECT COUNT(*) FROM canonical_ingredient").fetchone()
+        if count > 0:
+            return 0
+
+        fixture_path = FIXTURES_DIR / "canonical_ingredients.json"
+        items = json.loads(fixture_path.read_text())
+        conn.executemany(
+            """
+            INSERT INTO canonical_ingredient
+                (name, default_unit, category, deny_flag, common_purchase_qty, common_purchase_unit)
+            VALUES (:name, :default_unit, :category, :deny_flag, :common_purchase_qty, :common_purchase_unit)
+            """,
+            items,
+        )
+        conn.commit()
+        return len(items)
     finally:
         conn.close()

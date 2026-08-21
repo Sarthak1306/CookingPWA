@@ -1,0 +1,1770 @@
+[
+  {
+    "name": "Onions",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "netted bag"
+  },
+  {
+    "name": "Garlic",
+    "default_unit": "clove",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "bulb"
+  },
+  {
+    "name": "Ginger",
+    "default_unit": "g",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "piece"
+  },
+  {
+    "name": "Green chillies",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "pack"
+  },
+  {
+    "name": "Tomatoes",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " punnet"
+  },
+  {
+    "name": "Tinned tomatoes",
+    "default_unit": "tin",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "4",
+    "common_purchase_unit": "-pack"
+  },
+  {
+    "name": "Potatoes",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "2.5",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Sweet potatoes",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "1",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Carrots",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "1",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Spinach",
+    "default_unit": "g",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "200",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Kale",
+    "default_unit": "g",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " bag"
+  },
+  {
+    "name": "Coriander",
+    "default_unit": "bunch",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "bunch"
+  },
+  {
+    "name": "Mint",
+    "default_unit": "bunch",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "bunch"
+  },
+  {
+    "name": "Parsley",
+    "default_unit": "bunch",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "bunch"
+  },
+  {
+    "name": "Dill",
+    "default_unit": "bunch",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "bunch"
+  },
+  {
+    "name": "Basil",
+    "default_unit": "bunch",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "pot"
+  },
+  {
+    "name": "Curry leaves",
+    "default_unit": "sprig",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "pack"
+  },
+  {
+    "name": "Lemons",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "3",
+    "common_purchase_unit": "-pack"
+  },
+  {
+    "name": "Limes",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "4",
+    "common_purchase_unit": "-pack"
+  },
+  {
+    "name": "Cauliflower",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " head"
+  },
+  {
+    "name": "Cabbage",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " head"
+  },
+  {
+    "name": "Green peas",
+    "default_unit": "g",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "400",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Green beans",
+    "default_unit": "g",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "200",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Bell peppers",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "3",
+    "common_purchase_unit": "-pack"
+  },
+  {
+    "name": "Cucumber",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": ""
+  },
+  {
+    "name": "Avocado",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "2",
+    "common_purchase_unit": "-pack"
+  },
+  {
+    "name": "Bananas",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " bunch"
+  },
+  {
+    "name": "Apples",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "6",
+    "common_purchase_unit": "-pack"
+  },
+  {
+    "name": "Mango",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": ""
+  },
+  {
+    "name": "Eggplant",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": ""
+  },
+  {
+    "name": "Okra",
+    "default_unit": "g",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "250",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Beetroot",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " bunch"
+  },
+  {
+    "name": "Radish",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " bunch"
+  },
+  {
+    "name": "Lettuce",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " head"
+  },
+  {
+    "name": "Celery",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " head"
+  },
+  {
+    "name": "Mushrooms",
+    "default_unit": "g",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "250",
+    "common_purchase_unit": "g punnet"
+  },
+  {
+    "name": "Broccoli",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " head"
+  },
+  {
+    "name": "Zucchini",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "3",
+    "common_purchase_unit": "-pack"
+  },
+  {
+    "name": "Sweetcorn",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "2",
+    "common_purchase_unit": "-pack"
+  },
+  {
+    "name": "Pumpkin",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": ""
+  },
+  {
+    "name": "Butternut squash",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": ""
+  },
+  {
+    "name": "Spring onions",
+    "default_unit": "bunch",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "bunch"
+  },
+  {
+    "name": "Red onions",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " net"
+  },
+  {
+    "name": "Shallots",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " net"
+  },
+  {
+    "name": "Fresh turmeric",
+    "default_unit": "g",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "piece"
+  },
+  {
+    "name": "Bok choy",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " bunch"
+  },
+  {
+    "name": "Asparagus",
+    "default_unit": "g",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " bunch"
+  },
+  {
+    "name": "Brussels sprouts",
+    "default_unit": "g",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "400",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Leeks",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " bunch"
+  },
+  {
+    "name": "Fennel bulb",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": ""
+  },
+  {
+    "name": "Chives",
+    "default_unit": "bunch",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "pot"
+  },
+  {
+    "name": "Thai basil",
+    "default_unit": "bunch",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "pack"
+  },
+  {
+    "name": "Lemongrass",
+    "default_unit": "stalk",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "pack"
+  },
+  {
+    "name": "Kaffir lime leaves",
+    "default_unit": "leaf",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "pack"
+  },
+  {
+    "name": "Bean sprouts",
+    "default_unit": "g",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " bag"
+  },
+  {
+    "name": "Pak choi",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Grapes",
+    "default_unit": "g",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " bag"
+  },
+  {
+    "name": "Oranges",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "5",
+    "common_purchase_unit": "-pack"
+  },
+  {
+    "name": "Strawberries",
+    "default_unit": "g",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "400",
+    "common_purchase_unit": "g punnet"
+  },
+  {
+    "name": "Blueberries",
+    "default_unit": "g",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "150",
+    "common_purchase_unit": "g punnet"
+  },
+  {
+    "name": "Pineapple",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": ""
+  },
+  {
+    "name": "Watermelon",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": ""
+  },
+  {
+    "name": "Pomegranate",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": ""
+  },
+  {
+    "name": "Papaya",
+    "default_unit": "",
+    "category": "Produce",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": ""
+  },
+  {
+    "name": "Milk",
+    "default_unit": "ml",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "2",
+    "common_purchase_unit": "L"
+  },
+  {
+    "name": "Butter",
+    "default_unit": "g",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "250",
+    "common_purchase_unit": "g block"
+  },
+  {
+    "name": "Ghee",
+    "default_unit": "g",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g jar"
+  },
+  {
+    "name": "Yoghurt",
+    "default_unit": "g",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g tub"
+  },
+  {
+    "name": "Paneer",
+    "default_unit": "g",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "200",
+    "common_purchase_unit": "g block"
+  },
+  {
+    "name": "Feta",
+    "default_unit": "g",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "200",
+    "common_purchase_unit": "g block"
+  },
+  {
+    "name": "Halloumi",
+    "default_unit": "g",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "225",
+    "common_purchase_unit": "g block"
+  },
+  {
+    "name": "Mozzarella",
+    "default_unit": "g",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "125",
+    "common_purchase_unit": "g ball"
+  },
+  {
+    "name": "Cheddar",
+    "default_unit": "g",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "200",
+    "common_purchase_unit": "g block"
+  },
+  {
+    "name": "Parmesan",
+    "default_unit": "g",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "150",
+    "common_purchase_unit": "g wedge"
+  },
+  {
+    "name": "Cream cheese",
+    "default_unit": "g",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "200",
+    "common_purchase_unit": "g tub"
+  },
+  {
+    "name": "Sour cream",
+    "default_unit": "ml",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "300",
+    "common_purchase_unit": "ml tub"
+  },
+  {
+    "name": "Double cream",
+    "default_unit": "ml",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "300",
+    "common_purchase_unit": "ml carton"
+  },
+  {
+    "name": "Coconut milk",
+    "default_unit": "ml",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "tin"
+  },
+  {
+    "name": "Coconut cream",
+    "default_unit": "ml",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "tin"
+  },
+  {
+    "name": "Eggs",
+    "default_unit": "",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "dozen"
+  },
+  {
+    "name": "Buttermilk",
+    "default_unit": "ml",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "ml carton"
+  },
+  {
+    "name": "Condensed milk",
+    "default_unit": "ml",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "tin"
+  },
+  {
+    "name": "Oat milk",
+    "default_unit": "ml",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "1",
+    "common_purchase_unit": "L carton"
+  },
+  {
+    "name": "Almond milk",
+    "default_unit": "ml",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "1",
+    "common_purchase_unit": "L carton"
+  },
+  {
+    "name": "Whipping cream",
+    "default_unit": "ml",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "300",
+    "common_purchase_unit": "ml carton"
+  },
+  {
+    "name": "Mascarpone",
+    "default_unit": "g",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "250",
+    "common_purchase_unit": "g tub"
+  },
+  {
+    "name": "Ricotta",
+    "default_unit": "g",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "250",
+    "common_purchase_unit": "g tub"
+  },
+  {
+    "name": "Cottage cheese",
+    "default_unit": "g",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "300",
+    "common_purchase_unit": "g tub"
+  },
+  {
+    "name": "Labneh",
+    "default_unit": "g",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "200",
+    "common_purchase_unit": "g tub"
+  },
+  {
+    "name": "Ice cream",
+    "default_unit": "ml",
+    "category": "Dairy",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " tub"
+  },
+  {
+    "name": "Rice",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "1",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Basmati rice",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "1",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Brown rice",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "1",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Orzo",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Pasta",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Spaghetti",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Couscous",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Quinoa",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Flour",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "1.5",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Wholemeal flour",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "1.5",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Besan (chickpea flour)",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "1",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Oats",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "1",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Breadcrumbs",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": ", ",
+    "common_purchase_unit": "pack"
+  },
+  {
+    "name": "Bread",
+    "default_unit": "",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " loaf"
+  },
+  {
+    "name": "Naan",
+    "default_unit": "",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Tortillas",
+    "default_unit": "",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Toor dal",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "1",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Moong dal",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "1",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Chana dal",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "1",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Masoor dal (red lentils)",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "1",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Urad dal",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Chickpeas",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "tin"
+  },
+  {
+    "name": "Kidney beans",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "tin"
+  },
+  {
+    "name": "Black beans",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "tin"
+  },
+  {
+    "name": "Cannellini beans",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": "tin"
+  },
+  {
+    "name": "Green lentils",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Sugar",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "1",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Brown sugar",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Jaggery",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g block"
+  },
+  {
+    "name": "Honey",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "340",
+    "common_purchase_unit": "g jar"
+  },
+  {
+    "name": "Baking powder",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " tin"
+  },
+  {
+    "name": "Baking soda",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " box"
+  },
+  {
+    "name": "Cornflour",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " box"
+  },
+  {
+    "name": "Poha (flattened rice)",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Vermicelli",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "400",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Semolina (rava/sooji)",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Rice flour",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Puffed rice (murmura)",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "200",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Papadum",
+    "default_unit": "",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Rolled oats",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "1",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Muesli",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Cereal",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " box"
+  },
+  {
+    "name": "Noodles",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "300",
+    "common_purchase_unit": "g pack"
+  },
+  {
+    "name": "Rice noodles",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "300",
+    "common_purchase_unit": "g pack"
+  },
+  {
+    "name": "Panko breadcrumbs",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "200",
+    "common_purchase_unit": "g pack"
+  },
+  {
+    "name": "Pita bread",
+    "default_unit": "",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Yeast",
+    "default_unit": "g",
+    "category": "Grains",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " sachet"
+  },
+  {
+    "name": "Cumin seeds",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Cumin powder",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Coriander seeds",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Coriander powder",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Turmeric",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Garam masala",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Chilli powder",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Chilli flakes",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Kashmiri chilli powder",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Mustard seeds",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Fennel seeds",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Fenugreek seeds",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Asafoetida (hing)",
+    "default_unit": "pinch",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " tin"
+  },
+  {
+    "name": "Cardamom pods",
+    "default_unit": "",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Cinnamon sticks",
+    "default_unit": "",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Cloves",
+    "default_unit": "",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Bay leaves",
+    "default_unit": "",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Black peppercorns",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " grinder"
+  },
+  {
+    "name": "Black pepper",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " grinder"
+  },
+  {
+    "name": "Smoked paprika",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Paprika",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Salt",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "1",
+    "common_purchase_unit": "kg bag"
+  },
+  {
+    "name": "Nutmeg",
+    "default_unit": "",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Saffron",
+    "default_unit": "pinch",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Tamarind paste",
+    "default_unit": "tbsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "200",
+    "common_purchase_unit": "g pack"
+  },
+  {
+    "name": "Curry powder",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Dried oregano",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Dried basil",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Dried thyme",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Chaat masala",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Amchur (dry mango powder)",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Star anise",
+    "default_unit": "",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Sesame seeds",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Poppy seeds",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Vanilla extract",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " bottle"
+  },
+  {
+    "name": "Cayenne pepper",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Onion powder",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Garlic powder",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Chilli oil",
+    "default_unit": "tbsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " bottle"
+  },
+  {
+    "name": "Msg / Ajinomoto",
+    "default_unit": "pinch",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "White pepper",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Ground ginger",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Ground cinnamon",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Allspice",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Five spice",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Za'atar",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Sumac",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Herbes de Provence",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Dried rosemary",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Dried mint",
+    "default_unit": "tsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Chili crisp",
+    "default_unit": "tbsp",
+    "category": "Spices",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " jar"
+  },
+  {
+    "name": "Chicken thighs",
+    "default_unit": "",
+    "category": "Proteins",
+    "deny_flag": false,
+    "common_purchase_qty": "6",
+    "common_purchase_unit": "-pack"
+  },
+  {
+    "name": "Chicken breast",
+    "default_unit": "",
+    "category": "Proteins",
+    "deny_flag": false,
+    "common_purchase_qty": "4",
+    "common_purchase_unit": "-pack"
+  },
+  {
+    "name": "Chicken mince",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g pack"
+  },
+  {
+    "name": "Whole chicken",
+    "default_unit": "",
+    "category": "Proteins",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": ""
+  },
+  {
+    "name": "Tofu",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " block"
+  },
+  {
+    "name": "Firm tofu",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " block"
+  },
+  {
+    "name": "Salmon fillets",
+    "default_unit": "",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "2",
+    "common_purchase_unit": "-pack"
+  },
+  {
+    "name": "Prawns",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " bag"
+  },
+  {
+    "name": "Shrimp",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " bag"
+  },
+  {
+    "name": "White fish fillets",
+    "default_unit": "",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "2",
+    "common_purchase_unit": "-pack"
+  },
+  {
+    "name": "Tinned tuna",
+    "default_unit": "",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " tin"
+  },
+  {
+    "name": "Bacon",
+    "default_unit": "",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Pork chops",
+    "default_unit": "",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "2",
+    "common_purchase_unit": "-pack"
+  },
+  {
+    "name": "Pork mince",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g pack"
+  },
+  {
+    "name": "Sausages",
+    "default_unit": "",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Ham",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Beef mince",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g pack"
+  },
+  {
+    "name": "Beef steak",
+    "default_unit": "",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "2",
+    "common_purchase_unit": "-pack"
+  },
+  {
+    "name": "Chorizo",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Tempeh",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " block"
+  },
+  {
+    "name": "Seitan",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Soy chunks",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": false,
+    "common_purchase_qty": "200",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Edamame",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": false,
+    "common_purchase_qty": "400",
+    "common_purchase_unit": "g bag"
+  },
+  {
+    "name": "Chicken drumsticks",
+    "default_unit": "",
+    "category": "Proteins",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Chicken wings",
+    "default_unit": "",
+    "category": "Proteins",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Turkey mince",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g pack"
+  },
+  {
+    "name": "Duck breast",
+    "default_unit": "",
+    "category": "Proteins",
+    "deny_flag": false,
+    "common_purchase_qty": "2",
+    "common_purchase_unit": "-pack"
+  },
+  {
+    "name": "Lamb chops",
+    "default_unit": "",
+    "category": "Proteins",
+    "deny_flag": false,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Lamb mince",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": false,
+    "common_purchase_qty": "500",
+    "common_purchase_unit": "g pack"
+  },
+  {
+    "name": "Crab meat",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Mussels",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " bag"
+  },
+  {
+    "name": "Squid",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " pack"
+  },
+  {
+    "name": "Anchovies",
+    "default_unit": "g",
+    "category": "Proteins",
+    "deny_flag": true,
+    "common_purchase_qty": "",
+    "common_purchase_unit": " tin"
+  }
+]

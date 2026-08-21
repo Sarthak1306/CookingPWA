@@ -1,3 +1,5 @@
+import type { IngredientSuggestion, PantryItem } from './types'
+
 export class ApiError extends Error {
   status: number
   constructor(status: number, message: string) {
@@ -39,4 +41,27 @@ export function login(username: string, password: string) {
 
 export function logout() {
   return request<{ ok: boolean }>('/api/logout', { method: 'POST' })
+}
+
+export function getPantry() {
+  return request<PantryItem[]>('/api/pantry')
+}
+
+export function searchIngredients(q: string) {
+  return request<IngredientSuggestion[]>(`/api/ingredients?q=${encodeURIComponent(q)}`)
+}
+
+export function addPantryItem(body: { name: string; qty_label?: string; is_low?: boolean }) {
+  return request<PantryItem>('/api/pantry', { method: 'POST', body: JSON.stringify(body) })
+}
+
+export function editPantryItem(
+  id: number,
+  body: { name: string; qty_label?: string; is_low?: boolean },
+) {
+  return request<PantryItem>(`/api/pantry/${id}`, { method: 'PATCH', body: JSON.stringify(body) })
+}
+
+export function restockPantryItem(id: number) {
+  return request<PantryItem>(`/api/pantry/${id}/restock`, { method: 'POST' })
 }
