@@ -1,0 +1,33 @@
+# nginx server block for kitchen.sarthaksrivastava.tech
+#
+# Drop this in /etc/nginx/sites-available/kitchen and symlink it into
+# sites-enabled — it's a new server block alongside the existing portfolio
+# config, not a replacement for it. certbot rewrites the TLS half of this
+# after issuance (see deploy/README.md).
+
+limit_req_zone $binary_remote_addr zone=kitchen_login:10m rate=5r/m;
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name kitchen.sarthaksrivastava.tech;
+
+    location / {
+        proxy_pass http://127.0.0.1:8420;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Extra layer on top of the app's own lockout — slows down credential
+    # stuffing before it even reaches FastAPI.
+    location /api/login {
+        limit_req zone=kitchen_login burst=5 nodelay;
+        proxy_pass http://127.0.0.1:8420;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}

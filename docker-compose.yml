@@ -1,0 +1,22 @@
+services:
+  kitchen:
+    build: .
+    restart: unless-stopped
+    # Host-side loopback-only binding is the actual security boundary here —
+    # see deploy/README.md for why the process inside the container still
+    # listens on 0.0.0.0.
+    ports:
+      - "127.0.0.1:8420:8420"
+    volumes:
+      - ./data:/data
+    environment:
+      KITCHEN_DB_PATH: /data/kitchen.db
+      KITCHEN_COOKIE_SECURE: "1"
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      KITCHEN_MODEL_NAME: ${KITCHEN_MODEL_NAME:-}
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8420/healthz')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
