@@ -14,6 +14,8 @@ services:
       KITCHEN_COOKIE_SECURE: "1"
       OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
       KITCHEN_MODEL_NAME: ${KITCHEN_MODEL_NAME:-}
+      KITCHEN_MODEL_NAME_CHEAP: ${KITCHEN_MODEL_NAME_CHEAP:-}
+      KITCHEN_MONTHLY_CALL_CAP: ${KITCHEN_MONTHLY_CALL_CAP:-300}
     healthcheck:
       test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8420/healthz')"]
       interval: 30s

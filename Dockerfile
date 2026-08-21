@@ -16,6 +16,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY app/ ./app/
 COPY scripts/ ./scripts/
 COPY migrations/ ./migrations/
+COPY fixtures/ ./fixtures/
 COPY --from=frontend /web/dist/ ./web/dist/
 
 ENV KITCHEN_STATIC_DIR=web/dist
