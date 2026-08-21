@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { addToShoppingList, ApiError, cookRecipe, getRecipe } from '../api'
-import type { RecipeDetail, UsedPantryItem } from '../types'
+import { addToShoppingList, ApiError, getRecipe } from '../api'
+import type { RecipeDetail, RecipeStep } from '../types'
 import './Recipe.css'
 
 const STEP_PREVIEW_COUNT = 3
@@ -16,19 +16,18 @@ function scaleQty(qty: string, ratio: number): string {
 export default function Recipe({
   recipeId,
   onBack,
-  onCooked,
+  onStartCook,
   onFlash,
 }: {
   recipeId: number
   onBack: () => void
-  onCooked: (recipeId: number, usedItems: UsedPantryItem[]) => void
+  onStartCook: (recipeId: number, steps: RecipeStep[]) => void
   onFlash: (msg: string) => void
 }) {
   const [recipe, setRecipe] = useState<RecipeDetail | null>(null)
   const [error, setError] = useState('')
   const [servings, setServings] = useState<number | null>(null)
   const [addingIds, setAddingIds] = useState<Set<number>>(new Set())
-  const [cooking, setCooking] = useState(false)
 
   useEffect(() => {
     setRecipe(null)
@@ -74,16 +73,9 @@ export default function Recipe({
     onFlash('Added to shopping list')
   }
 
-  async function handleStartCook() {
-    if (!recipe || cooking) return
-    setCooking(true)
-    try {
-      const result = await cookRecipe(recipe.id)
-      onCooked(recipe.id, result.used_pantry_items)
-    } catch (err) {
-      onFlash(err instanceof ApiError ? err.message : "Couldn't mark that as cooked.")
-      setCooking(false)
-    }
+  function handleStartCook() {
+    if (!recipe || recipe.steps.length === 0) return
+    onStartCook(recipe.id, recipe.steps)
   }
 
   if (error) {
@@ -193,8 +185,8 @@ export default function Recipe({
         {moreSteps > 0 && <div className="recipe__more-steps">+ {moreSteps} more steps</div>}
       </div>
       <div className="recipe__footer">
-        <button className="recipe__start-cook" onClick={handleStartCook} disabled={cooking}>
-          {cooking ? 'Marking as cooked…' : 'Start cooking'}
+        <button className="recipe__start-cook" onClick={handleStartCook} disabled={recipe.steps.length === 0}>
+          Start cooking
         </button>
       </div>
     </div>

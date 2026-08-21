@@ -4,11 +4,12 @@ import Pantry from './pages/Pantry'
 import AddEditItem from './pages/AddEditItem'
 import Suggest from './pages/Suggest'
 import Recipe from './pages/Recipe'
+import CookMode from './pages/CookMode'
 import RanOut from './pages/RanOut'
 import BottomNav from './components/BottomNav'
 import Toast from './components/Toast'
 import { getMe, logout } from './api'
-import type { PantryItem, UsedPantryItem } from './types'
+import type { PantryItem, RecipeStep, UsedPantryItem } from './types'
 import './App.css'
 
 type AuthState = { status: 'checking' } | { status: 'anonymous' } | { status: 'signedIn'; username: string }
@@ -17,6 +18,7 @@ type Screen =
   | { name: 'addEdit'; item: PantryItem | null }
   | { name: 'suggest' }
   | { name: 'recipe'; recipeId: number; from: 'pantry' | 'suggest' }
+  | { name: 'cook'; recipeId: number; steps: RecipeStep[]; from: 'pantry' | 'suggest' }
   | { name: 'ranOut'; usedItems: UsedPantryItem[] }
 
 const NAV_SCREENS = new Set(['pantry', 'suggest'])
@@ -94,7 +96,17 @@ function App() {
         <Recipe
           recipeId={screen.recipeId}
           onBack={() => (screen.from === 'pantry' ? setScreen({ name: 'pantry' }) : setScreen({ name: 'suggest' }))}
-          onCooked={(_recipeId, usedItems) => setScreen({ name: 'ranOut', usedItems })}
+          onStartCook={(recipeId, steps) => setScreen({ name: 'cook', recipeId, steps, from: screen.from })}
+          onFlash={flash}
+        />
+      )}
+
+      {screen.name === 'cook' && (
+        <CookMode
+          recipeId={screen.recipeId}
+          steps={screen.steps}
+          onExit={() => setScreen({ name: 'recipe', recipeId: screen.recipeId, from: screen.from })}
+          onFinished={(_recipeId, usedItems) => setScreen({ name: 'ranOut', usedItems })}
           onFlash={flash}
         />
       )}
