@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { ApiError, getRecipe } from '../api'
-import type { RecipeDetail } from '../types'
+import { addToShoppingList, ApiError, cookRecipe, getRecipe } from '../api'
+import type { RecipeDetail, UsedPantryItem } from '../types'
 import './Recipe.css'
 
 const STEP_PREVIEW_COUNT = 3
@@ -13,10 +13,22 @@ function scaleQty(qty: string, ratio: number): string {
   return `${scaled}${rest}`
 }
 
-export default function Recipe({ recipeId, onBack }: { recipeId: number; onBack: () => void }) {
+export default function Recipe({
+  recipeId,
+  onBack,
+  onCooked,
+  onFlash,
+}: {
+  recipeId: number
+  onBack: () => void
+  onCooked: (recipeId: number, usedItems: UsedPantryItem[]) => void
+  onFlash: (msg: string) => void
+}) {
   const [recipe, setRecipe] = useState<RecipeDetail | null>(null)
   const [error, setError] = useState('')
   const [servings, setServings] = useState<number | null>(null)
+  const [addingIds, setAddingIds] = useState<Set<number>>(new Set())
+  const [cooking, setCooking] = useState(false)
 
   useEffect(() => {
     setRecipe(null)
@@ -28,6 +40,51 @@ export default function Recipe({ recipeId, onBack }: { recipeId: number; onBack:
       })
       .catch((err) => setError(err instanceof ApiError ? err.message : "Couldn't load that recipe."))
   }, [recipeId])
+
+  async function handleAdd(ingredientId: number) {
+    if (addingIds.has(ingredientId)) return
+    setAddingIds((s) => new Set(s).add(ingredientId))
+    try {
+      await addToShoppingList(ingredientId)
+      setRecipe((r) =>
+        r
+          ? {
+              ...r,
+              ingredients: r.ingredients.map((i) =>
+                i.ingredient_id === ingredientId ? { ...i, on_shopping_list: true } : i,
+              ),
+            }
+          : r,
+      )
+    } catch (err) {
+      onFlash(err instanceof ApiError ? err.message : "Couldn't add that.")
+    } finally {
+      setAddingIds((s) => {
+        const next = new Set(s)
+        next.delete(ingredientId)
+        return next
+      })
+    }
+  }
+
+  async function handleAddAll() {
+    if (!recipe) return
+    const missing = recipe.ingredients.filter((i) => !i.have && !i.on_shopping_list)
+    await Promise.all(missing.map((i) => handleAdd(i.ingredient_id)))
+    onFlash('Added to shopping list')
+  }
+
+  async function handleStartCook() {
+    if (!recipe || cooking) return
+    setCooking(true)
+    try {
+      const result = await cookRecipe(recipe.id)
+      onCooked(recipe.id, result.used_pantry_items)
+    } catch (err) {
+      onFlash(err instanceof ApiError ? err.message : "Couldn't mark that as cooked.")
+      setCooking(false)
+    }
+  }
 
   if (error) {
     return (
@@ -56,7 +113,7 @@ export default function Recipe({ recipeId, onBack }: { recipeId: number; onBack:
   }
 
   const ratio = servings / recipe.base_servings
-  const missingCount = recipe.ingredients.filter((i) => !i.have).length
+  const missingToAdd = recipe.ingredients.filter((i) => !i.have && !i.on_shopping_list)
   const previewSteps = recipe.steps.slice(0, STEP_PREVIEW_COUNT)
   const moreSteps = recipe.steps.length - previewSteps.length
 
@@ -109,22 +166,18 @@ export default function Recipe({ recipeId, onBack }: { recipeId: number; onBack:
               {!ing.have && (
                 <button
                   className="recipe__add-missing"
-                  disabled
-                  title="Shopping list arrives in a later phase"
+                  disabled={ing.on_shopping_list || addingIds.has(ing.ingredient_id)}
+                  onClick={() => handleAdd(ing.ingredient_id)}
                 >
-                  Add
+                  {ing.on_shopping_list ? 'On list' : 'Add'}
                 </button>
               )}
             </div>
           ))}
         </div>
-        {missingCount > 0 && (
-          <button
-            className="recipe__add-all"
-            disabled
-            title="Shopping list arrives in a later phase"
-          >
-            Add all {missingCount} missing to shopping list
+        {missingToAdd.length > 0 && (
+          <button className="recipe__add-all" onClick={handleAddAll}>
+            Add all {missingToAdd.length} missing to shopping list
           </button>
         )}
 
@@ -140,8 +193,8 @@ export default function Recipe({ recipeId, onBack }: { recipeId: number; onBack:
         {moreSteps > 0 && <div className="recipe__more-steps">+ {moreSteps} more steps</div>}
       </div>
       <div className="recipe__footer">
-        <button className="recipe__start-cook" disabled title="Cook mode arrives in a later phase">
-          Start cooking
+        <button className="recipe__start-cook" onClick={handleStartCook} disabled={cooking}>
+          {cooking ? 'Marking as cooked…' : 'Start cooking'}
         </button>
       </div>
     </div>

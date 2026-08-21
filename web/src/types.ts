@@ -46,6 +46,8 @@ export type RecipeIngredient = {
   unit: string
   optional: boolean
   have: boolean
+  pantry_item_id: number | null
+  on_shopping_list: boolean
 }
 
 export type RecipeStep = {
@@ -64,4 +66,15 @@ export type RecipeDetail = {
   servings: number
   ingredients: RecipeIngredient[]
   steps: RecipeStep[]
+}
+
+export type UsedPantryItem = {
+  pantry_item_id: number
+  name: string
+}
+
+export type CookResult = {
+  cook_log_id: number
+  recipe_id: number
+  used_pantry_items: UsedPantryItem[]
 }

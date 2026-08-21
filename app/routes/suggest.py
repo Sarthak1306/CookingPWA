@@ -86,10 +86,11 @@ def get_recipe(recipe_id: int, servings: int | None = None, conn: sqlite3.Connec
         SELECT canonical_ingredient.id AS ingredient_id, canonical_ingredient.name,
                canonical_ingredient.color, canonical_ingredient.emoji,
                recipe_ingredient.qty, recipe_ingredient.unit, recipe_ingredient.optional_flag,
-               pantry_item.id AS pantry_item_id
+               pantry_item.id AS pantry_item_id, shopping_item.id AS shopping_item_id
         FROM recipe_ingredient
         JOIN canonical_ingredient ON canonical_ingredient.id = recipe_ingredient.ingredient_id
         LEFT JOIN pantry_item ON pantry_item.ingredient_id = recipe_ingredient.ingredient_id
+        LEFT JOIN shopping_item ON shopping_item.ingredient_id = recipe_ingredient.ingredient_id
         WHERE recipe_ingredient.recipe_id = ?
         ORDER BY canonical_ingredient.name COLLATE NOCASE
         """,
@@ -119,11 +120,47 @@ def get_recipe(recipe_id: int, servings: int | None = None, conn: sqlite3.Connec
                 "unit": r["unit"],
                 "optional": bool(r["optional_flag"]),
                 "have": r["pantry_item_id"] is not None,
+                "pantry_item_id": r["pantry_item_id"],
+                "on_shopping_list": r["shopping_item_id"] is not None,
             }
             for r in ingredient_rows
         ],
         "steps": [
             {"position": s["position"], "text": s["text"], "timer_seconds": s["timer_seconds"]}
             for s in steps
+        ],
+    }
+
+
+@router.post("/recipes/{recipe_id}/cook", status_code=201)
+def cook_recipe(recipe_id: int, conn: sqlite3.Connection = Depends(get_db)):
+    """Marks a recipe cooked — step-by-step cook mode is P4, so for now
+    this just logs it (closing the loop for get_recent_meals) and hands
+    back the pantry items it used, for the ran-out checklist. Rating and
+    notes aren't collected yet; no screen asks for them."""
+    recipe = conn.execute("SELECT id FROM recipe WHERE id = ?", (recipe_id,)).fetchone()
+    if recipe is None:
+        raise HTTPException(status_code=404)
+
+    cur = conn.execute("INSERT INTO cook_log (recipe_id) VALUES (?)", (recipe_id,))
+    conn.commit()
+
+    used = conn.execute(
+        """
+        SELECT pantry_item.id AS pantry_item_id, canonical_ingredient.name
+        FROM recipe_ingredient
+        JOIN canonical_ingredient ON canonical_ingredient.id = recipe_ingredient.ingredient_id
+        JOIN pantry_item ON pantry_item.ingredient_id = recipe_ingredient.ingredient_id
+        WHERE recipe_ingredient.recipe_id = ?
+        ORDER BY canonical_ingredient.name COLLATE NOCASE
+        """,
+        (recipe_id,),
+    ).fetchall()
+
+    return {
+        "cook_log_id": cur.lastrowid,
+        "recipe_id": recipe_id,
+        "used_pantry_items": [
+            {"pantry_item_id": r["pantry_item_id"], "name": r["name"]} for r in used
         ],
     }

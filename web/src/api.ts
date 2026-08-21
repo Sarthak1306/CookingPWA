@@ -1,4 +1,4 @@
-import type { IngredientSuggestion, JobStatus, PantryItem, RecipeDetail } from './types'
+import type { CookResult, IngredientSuggestion, JobStatus, PantryItem, RecipeDetail } from './types'
 
 export class ApiError extends Error {
   status: number
@@ -81,4 +81,22 @@ export function getJob(id: number) {
 export function getRecipe(id: number, servings?: number) {
   const qs = servings ? `?servings=${servings}` : ''
   return request<RecipeDetail>(`/api/recipes/${id}${qs}`)
+}
+
+export function cookRecipe(id: number) {
+  return request<CookResult>(`/api/recipes/${id}/cook`, { method: 'POST' })
+}
+
+export function markRanOut(pantryItemIds: number[]) {
+  return request<{ moved: { ingredient_id: number; name: string }[] }>('/api/pantry/ran-out', {
+    method: 'POST',
+    body: JSON.stringify({ pantry_item_ids: pantryItemIds }),
+  })
+}
+
+export function addToShoppingList(ingredientId: number, addedFrom: string = 'recipe') {
+  return request<{ ingredient_id: number; name: string; on_list: boolean }>('/api/shopping', {
+    method: 'POST',
+    body: JSON.stringify({ ingredient_id: ingredientId, added_from: addedFrom }),
+  })
 }

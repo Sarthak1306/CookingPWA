@@ -213,3 +213,39 @@ def mark_out_of_stock(pantry_item_id: int, conn: sqlite3.Connection = Depends(ge
     conn.execute("DELETE FROM pantry_item WHERE id = ?", (pantry_item_id,))
     conn.commit()
     return {"ok": True}
+
+
+class RanOutBody(BaseModel):
+    pantry_item_ids: list[int]
+
+
+@router.post("/pantry/ran-out")
+def mark_ran_out(body: RanOutBody, conn: sqlite3.Connection = Depends(get_db)):
+    """The post-cook checklist's confirm action: the tapped pantry items
+    leave the pantry and land on the shopping list. That's the whole
+    update flow — no quantities, no arithmetic."""
+    moved = []
+    for pantry_item_id in body.pantry_item_ids:
+        row = conn.execute(
+            """
+            SELECT canonical_ingredient.id AS ingredient_id, canonical_ingredient.name
+            FROM pantry_item JOIN canonical_ingredient ON canonical_ingredient.id = pantry_item.ingredient_id
+            WHERE pantry_item.id = ?
+            """,
+            (pantry_item_id,),
+        ).fetchone()
+        if row is None:
+            continue
+        conn.execute("DELETE FROM pantry_item WHERE id = ?", (pantry_item_id,))
+        existing = conn.execute(
+            "SELECT id FROM shopping_item WHERE ingredient_id = ?", (row["ingredient_id"],)
+        ).fetchone()
+        if existing is None:
+            conn.execute(
+                "INSERT INTO shopping_item (ingredient_id, added_from) VALUES (?, 'ran_out')",
+                (row["ingredient_id"],),
+            )
+        moved.append({"ingredient_id": row["ingredient_id"], "name": row["name"]})
+    conn.commit()
+    return {"moved": moved}
+    return {"ok": True}

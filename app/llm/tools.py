@@ -77,9 +77,18 @@ def get_pantry(conn: sqlite3.Connection, exclude_ingredient_ids: set[int]) -> li
 
 
 def get_recent_meals(conn: sqlite3.Connection, n: int) -> list[dict]:
-    # Honest stub — cook_log lands in P3. Nothing has been logged as cooked
-    # yet, so an empty list is the correct answer, not a placeholder.
-    return []
+    rows = conn.execute(
+        """
+        SELECT cook_log.cooked_at, recipe.title, recipe.cuisine
+        FROM cook_log JOIN recipe ON recipe.id = cook_log.recipe_id
+        ORDER BY cook_log.cooked_at DESC
+        LIMIT ?
+        """,
+        (max(1, n),),
+    ).fetchall()
+    return [
+        {"title": r["title"], "cuisine": r["cuisine"], "cooked_at": r["cooked_at"]} for r in rows
+    ]
 
 
 def get_taste_profile(conn: sqlite3.Connection) -> str:

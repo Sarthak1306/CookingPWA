@@ -1,0 +1,131 @@
+.ran-out {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 8px 20px 20px;
+  max-width: 460px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ran-out__header {
+  flex: none;
+  padding-bottom: 6px;
+}
+
+.ran-out__title {
+  font-family: var(--font-display);
+  font-size: 30px;
+  line-height: 1.15;
+}
+
+.ran-out__subtitle {
+  font-size: 15px;
+  color: var(--text-muted-55);
+  margin-top: 6px;
+}
+
+.ran-out__scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ran-out__empty {
+  padding: 24px 4px;
+  font-size: 15px;
+  color: var(--text-muted-55);
+}
+
+.ran-out__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 68px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 22px;
+  background: var(--input-bg);
+  cursor: pointer;
+  text-align: left;
+}
+
+.ran-out__item:hover {
+  background: #e2d1b3;
+}
+
+.ran-out__check {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 2.75px solid rgba(32, 30, 29, 0.22);
+  display: block;
+}
+
+.ran-out__check--checked {
+  border: none;
+  background: var(--accent);
+  color: var(--accent-on);
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ran-out__item-name {
+  flex: 1;
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ran-out__footer {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ran-out__confirm {
+  height: 62px;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-on);
+  font-family: var(--font-display);
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.ran-out__confirm:hover {
+  background: var(--accent-hover);
+}
+
+.ran-out__confirm:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.ran-out__skip {
+  height: 56px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  font-size: 17px;
+  color: var(--text-muted-55);
+  cursor: pointer;
+}
+
+.ran-out__skip:hover {
+  background: rgba(32, 30, 29, 0.07);
+}
+
+.ran-out__skip:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
