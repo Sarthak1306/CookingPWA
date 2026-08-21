@@ -1,0 +1,149 @@
+import { useEffect, useState } from 'react'
+import { ApiError, getRecipe } from '../api'
+import type { RecipeDetail } from '../types'
+import './Recipe.css'
+
+const STEP_PREVIEW_COUNT = 3
+
+function scaleQty(qty: string, ratio: number): string {
+  const n = parseFloat(qty)
+  if (Number.isNaN(n)) return qty
+  const scaled = Math.round(n * ratio * 100) / 100
+  const rest = qty.slice(String(n).length)
+  return `${scaled}${rest}`
+}
+
+export default function Recipe({ recipeId, onBack }: { recipeId: number; onBack: () => void }) {
+  const [recipe, setRecipe] = useState<RecipeDetail | null>(null)
+  const [error, setError] = useState('')
+  const [servings, setServings] = useState<number | null>(null)
+
+  useEffect(() => {
+    setRecipe(null)
+    setError('')
+    getRecipe(recipeId)
+      .then((r) => {
+        setRecipe(r)
+        setServings(r.base_servings)
+      })
+      .catch((err) => setError(err instanceof ApiError ? err.message : "Couldn't load that recipe."))
+  }, [recipeId])
+
+  if (error) {
+    return (
+      <div className="recipe">
+        <div className="recipe__header">
+          <button className="recipe__back" onClick={onBack} aria-label="Back">
+            ‹
+          </button>
+        </div>
+        <div className="recipe__empty">{error}</div>
+      </div>
+    )
+  }
+
+  if (!recipe || servings === null) {
+    return (
+      <div className="recipe">
+        <div className="recipe__header">
+          <button className="recipe__back" onClick={onBack} aria-label="Back">
+            ‹
+          </button>
+        </div>
+        <div className="recipe__empty">Loading…</div>
+      </div>
+    )
+  }
+
+  const ratio = servings / recipe.base_servings
+  const missingCount = recipe.ingredients.filter((i) => !i.have).length
+  const previewSteps = recipe.steps.slice(0, STEP_PREVIEW_COUNT)
+  const moreSteps = recipe.steps.length - previewSteps.length
+
+  return (
+    <div className="recipe">
+      <div className="recipe__header">
+        <button className="recipe__back" onClick={onBack} aria-label="Back">
+          ‹
+        </button>
+      </div>
+      <div className="recipe__scroll sc">
+        <div className="recipe__title">{recipe.title}</div>
+        <div className="recipe__meta">
+          {recipe.est_minutes != null && `${recipe.est_minutes} min · `}
+          {servings} servings
+        </div>
+
+        <div className="recipe__servings-row">
+          <span className="recipe__servings-label">Servings</span>
+          <div className="recipe__servings-control">
+            <button
+              className="recipe__servings-btn"
+              onClick={() => setServings((s) => Math.max(1, (s ?? 1) - 1))}
+            >
+              −
+            </button>
+            <span className="recipe__servings-value">{servings}</span>
+            <button
+              className="recipe__servings-btn"
+              onClick={() => setServings((s) => Math.min(8, (s ?? 1) + 1))}
+            >
+              +
+            </button>
+          </div>
+        </div>
+
+        <div className="recipe__section-label">Ingredients</div>
+        <div className="recipe__ingredients">
+          {recipe.ingredients.map((ing) => (
+            <div className="recipe__ingredient" key={ing.ingredient_id}>
+              {ing.have ? (
+                <span className="recipe__check recipe__check--have">✓</span>
+              ) : (
+                <span className="recipe__check recipe__check--missing" />
+              )}
+              <span className="recipe__ingredient-name">{ing.name}</span>
+              <span className="recipe__ingredient-qty">
+                {scaleQty(ing.qty, ratio)} {ing.unit}
+              </span>
+              {!ing.have && (
+                <button
+                  className="recipe__add-missing"
+                  disabled
+                  title="Shopping list arrives in a later phase"
+                >
+                  Add
+                </button>
+              )}
+            </div>
+          ))}
+        </div>
+        {missingCount > 0 && (
+          <button
+            className="recipe__add-all"
+            disabled
+            title="Shopping list arrives in a later phase"
+          >
+            Add all {missingCount} missing to shopping list
+          </button>
+        )}
+
+        <div className="recipe__section-label">Steps</div>
+        <div className="recipe__steps">
+          {previewSteps.map((s) => (
+            <div className="recipe__step" key={s.position}>
+              <span className="recipe__step-n">{s.position + 1}</span>
+              <span className="recipe__step-text">{s.text}</span>
+            </div>
+          ))}
+        </div>
+        {moreSteps > 0 && <div className="recipe__more-steps">+ {moreSteps} more steps</div>}
+      </div>
+      <div className="recipe__footer">
+        <button className="recipe__start-cook" disabled title="Cook mode arrives in a later phase">
+          Start cooking
+        </button>
+      </div>
+    </div>
+  )
+}

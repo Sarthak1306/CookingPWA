@@ -1,4 +1,4 @@
-import type { IngredientSuggestion, PantryItem } from './types'
+import type { IngredientSuggestion, JobStatus, PantryItem, RecipeDetail } from './types'
 
 export class ApiError extends Error {
   status: number
@@ -64,4 +64,21 @@ export function editPantryItem(
 
 export function restockPantryItem(id: number) {
   return request<PantryItem>(`/api/pantry/${id}/restock`, { method: 'POST' })
+}
+
+export function markOutOfStock(id: number) {
+  return request<{ ok: boolean }>(`/api/pantry/${id}/out-of-stock`, { method: 'POST' })
+}
+
+export function createSuggestJob(body: { query: string; avoid: string[] }) {
+  return request<{ job_id: number }>('/api/suggest', { method: 'POST', body: JSON.stringify(body) })
+}
+
+export function getJob(id: number) {
+  return request<JobStatus>(`/api/jobs/${id}`)
+}
+
+export function getRecipe(id: number, servings?: number) {
+  const qs = servings ? `?servings=${servings}` : ''
+  return request<RecipeDetail>(`/api/recipes/${id}${qs}`)
 }

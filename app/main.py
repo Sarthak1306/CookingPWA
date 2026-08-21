@@ -1,3 +1,4 @@
+import asyncio
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -6,14 +7,22 @@ from fastapi.staticfiles import StaticFiles
 
 from app.config import settings
 from app.db import apply_migrations, sync_canonical_ingredients
-from app.routes import auth, health, pantry
+from app.jobs import worker_loop
+from app.routes import auth, health, pantry, suggest
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     apply_migrations()
     sync_canonical_ingredients()
-    yield
+
+    stop_event = asyncio.Event()
+    worker_task = asyncio.create_task(worker_loop(stop_event))
+    try:
+        yield
+    finally:
+        stop_event.set()
+        await worker_task
 
 
 app = FastAPI(title="Kitchen", lifespan=lifespan)
@@ -21,6 +30,7 @@ app = FastAPI(title="Kitchen", lifespan=lifespan)
 app.include_router(health.router)
 app.include_router(auth.router)
 app.include_router(pantry.router)
+app.include_router(suggest.router)
 
 static_dir = Path(settings.static_dir)
 if static_dir.exists():

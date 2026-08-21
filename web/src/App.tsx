@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import Login from './pages/Login'
 import Pantry from './pages/Pantry'
 import AddEditItem from './pages/AddEditItem'
+import Suggest from './pages/Suggest'
+import Recipe from './pages/Recipe'
 import BottomNav from './components/BottomNav'
 import Toast from './components/Toast'
 import { getMe, logout } from './api'
@@ -9,7 +11,13 @@ import type { PantryItem } from './types'
 import './App.css'
 
 type AuthState = { status: 'checking' } | { status: 'anonymous' } | { status: 'signedIn'; username: string }
-type Screen = { name: 'pantry' } | { name: 'addEdit'; item: PantryItem | null }
+type Screen =
+  | { name: 'pantry' }
+  | { name: 'addEdit'; item: PantryItem | null }
+  | { name: 'suggest' }
+  | { name: 'recipe'; recipeId: number; from: 'pantry' | 'suggest' }
+
+const NAV_SCREENS = new Set(['pantry', 'suggest'])
 
 function App() {
   const [auth, setAuth] = useState<AuthState>({ status: 'checking' })
@@ -45,20 +53,23 @@ function App() {
   return (
     <div className="app-shell app-shell--app">
       {screen.name === 'pantry' && (
-        <>
-          <div className="app-shell__signout-row">
-            <button className="app-shell__signout" onClick={() => logout().then(() => setAuth({ status: 'anonymous' }))}>
-              Sign out
-            </button>
-          </div>
-          <Pantry
-            key={pantryVersion}
-            onOpenAdd={() => setScreen({ name: 'addEdit', item: null })}
-            onOpenEdit={(item) => setScreen({ name: 'addEdit', item })}
-            onFlash={flash}
-          />
-          <BottomNav active="pantry" />
-        </>
+        <div className="app-shell__signout-row">
+          <button
+            className="app-shell__signout"
+            onClick={() => logout().then(() => setAuth({ status: 'anonymous' }))}
+          >
+            Sign out
+          </button>
+        </div>
+      )}
+
+      {screen.name === 'pantry' && (
+        <Pantry
+          key={pantryVersion}
+          onOpenAdd={() => setScreen({ name: 'addEdit', item: null })}
+          onOpenEdit={(item) => setScreen({ name: 'addEdit', item })}
+          onFlash={flash}
+        />
       )}
 
       {screen.name === 'addEdit' && (
@@ -70,6 +81,24 @@ function App() {
             setScreen({ name: 'pantry' })
           }}
           onFlash={flash}
+        />
+      )}
+
+      {screen.name === 'suggest' && (
+        <Suggest onOpenRecipe={(recipeId) => setScreen({ name: 'recipe', recipeId, from: 'suggest' })} />
+      )}
+
+      {screen.name === 'recipe' && (
+        <Recipe
+          recipeId={screen.recipeId}
+          onBack={() => (screen.from === 'pantry' ? setScreen({ name: 'pantry' }) : setScreen({ name: 'suggest' }))}
+        />
+      )}
+
+      {NAV_SCREENS.has(screen.name) && (
+        <BottomNav
+          active={screen.name}
+          onNavigate={(tab) => (tab === 'pantry' ? setScreen({ name: 'pantry' }) : setScreen({ name: 'suggest' }))}
         />
       )}
 

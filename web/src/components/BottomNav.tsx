@@ -7,18 +7,27 @@ const TABS = [
   { id: 'profile', label: 'Profile' },
 ] as const
 
-export default function BottomNav({ active }: { active: string }) {
+const ENABLED = new Set(['pantry', 'suggest'])
+
+export default function BottomNav({
+  active,
+  onNavigate,
+}: {
+  active: string
+  onNavigate: (tab: 'pantry' | 'suggest') => void
+}) {
   return (
     <nav className="bottom-nav">
       {TABS.map((tab) => {
         const isActive = tab.id === active
-        const isEnabled = tab.id === 'pantry'
+        const isEnabled = ENABLED.has(tab.id)
         return (
           <button
             key={tab.id}
             className={`bottom-nav__tab${isActive ? ' bottom-nav__tab--active' : ''}`}
             disabled={!isEnabled}
             title={isEnabled ? undefined : 'Coming in a later phase'}
+            onClick={() => isEnabled && onNavigate(tab.id as 'pantry' | 'suggest')}
           >
             <span className="bottom-nav__dot" />
             <span className="bottom-nav__label">{tab.label}</span>

@@ -5,22 +5,14 @@ from pydantic import BaseModel
 
 from app.auth.dependencies import get_current_user, get_db
 from app.auth.security import now_iso
+from app.ingredients import (
+    FALLBACK_COLOR,
+    FALLBACK_EMOJI,
+    pack_label,
+    resolve_ingredient_id,
+)
 
 router = APIRouter(prefix="/api", dependencies=[Depends(get_current_user)])
-
-FALLBACK_CATEGORY = "Other"
-FALLBACK_COLOR = "#e6ddc8"
-FALLBACK_EMOJI = ""  # a made-up ingredient gets a color, not a guessed icon
-
-
-def _pack_label(row: sqlite3.Row) -> str:
-    return f"{row['common_purchase_qty']}{row['common_purchase_unit']}"
-
-
-def _ingredient_row(conn: sqlite3.Connection, ingredient_id: int) -> sqlite3.Row:
-    return conn.execute(
-        "SELECT * FROM canonical_ingredient WHERE id = ?", (ingredient_id,)
-    ).fetchone()
 
 
 def _pantry_item_out(conn: sqlite3.Connection, pantry_item_id: int) -> dict:
@@ -43,32 +35,11 @@ def _pantry_item_out(conn: sqlite3.Connection, pantry_item_id: int) -> dict:
         "category": row["category"],
         "qty_label": row["qty_label"],
         "is_low": bool(row["is_low"]),
-        "pack": _pack_label(row),
+        "pack": pack_label(row),
         "color": row["color"] or FALLBACK_COLOR,
         "emoji": row["emoji"] or FALLBACK_EMOJI,
         "updated_at": row["updated_at"],
     }
-
-
-def _resolve_ingredient_id(conn: sqlite3.Connection, name: str) -> int:
-    """Case-insensitive match against canonical_ingredient. Creates a new
-    row — uncategorized — when the name doesn't match anything, so it can
-    still reach the shopping list and future LLM matching later."""
-    existing = conn.execute(
-        "SELECT id FROM canonical_ingredient WHERE lower(name) = lower(?)", (name,)
-    ).fetchone()
-    if existing:
-        return existing["id"]
-
-    cur = conn.execute(
-        """
-        INSERT INTO canonical_ingredient
-            (name, category, default_unit, deny_flag, common_purchase_qty, common_purchase_unit, color, emoji)
-        VALUES (?, ?, '', 0, '', '', ?, ?)
-        """,
-        (name, FALLBACK_CATEGORY, FALLBACK_COLOR, FALLBACK_EMOJI),
-    )
-    return cur.lastrowid
 
 
 def _upsert_pantry_item(
@@ -83,7 +54,7 @@ def _upsert_pantry_item(
     that ingredient — merging into an existing row rather than ever
     tripping the ingredient_id UNIQUE constraint, since low friction beats
     a form that can reject you for typing an existing item's name."""
-    ingredient_id = _resolve_ingredient_id(conn, name)
+    ingredient_id = resolve_ingredient_id(conn, name)
 
     if editing_pantry_item_id is not None:
         current = conn.execute(
@@ -147,7 +118,7 @@ def list_pantry(conn: sqlite3.Connection = Depends(get_db)):
             "category": r["category"],
             "qty_label": r["qty_label"],
             "is_low": bool(r["is_low"]),
-            "pack": _pack_label(r),
+            "pack": pack_label(r),
             "color": r["color"] or FALLBACK_COLOR,
             "emoji": r["emoji"] or FALLBACK_EMOJI,
             "updated_at": r["updated_at"],
@@ -176,7 +147,7 @@ def search_ingredients(q: str = "", conn: sqlite3.Connection = Depends(get_db)):
             "id": r["id"],
             "name": r["name"],
             "category": r["category"],
-            "pack": _pack_label(r),
+            "pack": pack_label(r),
             "color": r["color"] or FALLBACK_COLOR,
             "emoji": r["emoji"] or FALLBACK_EMOJI,
         }
@@ -221,10 +192,24 @@ def restock_pantry_item(pantry_item_id: int, conn: sqlite3.Connection = Depends(
     if row is None:
         raise HTTPException(status_code=404)
 
-    pack = _pack_label(row) or "restocked"
+    pack = pack_label(row) or "restocked"
     conn.execute(
         "UPDATE pantry_item SET qty_label = ?, is_low = 0, updated_at = ? WHERE id = ?",
         (pack, now_iso(), pantry_item_id),
     )
     conn.commit()
     return _pantry_item_out(conn, pantry_item_id)
+
+
+@router.post("/pantry/{pantry_item_id}/out-of-stock")
+def mark_out_of_stock(pantry_item_id: int, conn: sqlite3.Connection = Depends(get_db)):
+    """The Suggest screen's one-tap 'out of stock' exclusion — per spec this
+    writes to the pantry and persists, i.e. it's gone, not just avoided for
+    one request. No shopping-list write here; that's the cook-flow's
+    ran-out checklist (P3) and manual adds (P6), both out of scope."""
+    row = conn.execute("SELECT id FROM pantry_item WHERE id = ?", (pantry_item_id,)).fetchone()
+    if row is None:
+        raise HTTPException(status_code=404)
+    conn.execute("DELETE FROM pantry_item WHERE id = ?", (pantry_item_id,))
+    conn.commit()
+    return {"ok": True}

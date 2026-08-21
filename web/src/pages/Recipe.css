@@ -1,0 +1,241 @@
+.recipe {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-width: 460px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.recipe__header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px 0;
+  flex: none;
+}
+
+.recipe__back {
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  color: var(--text);
+  cursor: pointer;
+  border-radius: 999px;
+}
+
+.recipe__back:hover {
+  background: rgba(32, 30, 29, 0.07);
+}
+
+.recipe__scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 20px 20px;
+}
+
+.recipe__empty {
+  padding: 40px 20px;
+  font-size: 16px;
+  color: var(--text-muted-55);
+}
+
+.recipe__title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1.15;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.recipe__meta {
+  font-size: 15px;
+  color: var(--text-muted-55);
+  margin-bottom: 22px;
+}
+
+.recipe__servings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.recipe__servings-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.recipe__servings-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.recipe__servings-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  font-size: 22px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.recipe__servings-btn:hover {
+  background: rgba(32, 30, 29, 0.07);
+}
+
+.recipe__servings-value {
+  min-width: 32px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--text);
+}
+
+.recipe__section-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted-55);
+  margin-bottom: 10px;
+}
+
+.recipe__ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 14px;
+}
+
+.recipe__ingredient {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 52px;
+  padding: 6px 2px;
+}
+
+.recipe__check {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.recipe__check--have {
+  background: #7a8a5e;
+  color: var(--surface);
+}
+
+.recipe__check--missing {
+  border: 2.5px solid var(--accent);
+}
+
+.recipe__ingredient-name {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.recipe__ingredient-qty {
+  font-size: 15px;
+  color: var(--text-muted-55);
+  white-space: nowrap;
+}
+
+.recipe__add-missing {
+  flex: none;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent-active);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.recipe__add-all {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  cursor: not-allowed;
+  opacity: 0.5;
+  margin-bottom: 26px;
+}
+
+.recipe__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.recipe__step {
+  display: flex;
+  gap: 14px;
+}
+
+.recipe__step-n {
+  flex: none;
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--text-muted-55);
+  width: 20px;
+}
+
+.recipe__step-text {
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.45;
+  color: rgba(32, 30, 29, 0.8);
+}
+
+.recipe__more-steps {
+  font-size: 14px;
+  color: var(--text-muted-55);
+  margin-top: 14px;
+  padding-left: 34px;
+}
+
+.recipe__footer {
+  flex: none;
+  padding: 12px 20px 20px;
+  background: var(--surface);
+  max-width: 460px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.recipe__start-cook {
+  width: 100%;
+  height: 60px;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-on);
+  font-family: var(--font-display);
+  font-size: 18px;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
