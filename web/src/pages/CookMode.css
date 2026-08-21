@@ -13,122 +13,314 @@
   flex: none;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 4px 0 10px;
-}
-
-.cook__counter {
-  font-family: var(--font-display);
-  font-size: 15px;
-  color: var(--text-muted-55);
+  gap: 12px;
+  padding: 10px 0 4px;
 }
 
 .cook__exit {
-  min-height: 44px;
-  padding: 0 14px;
+  width: 44px;
+  height: 44px;
+  flex: none;
   border: none;
-  background: transparent;
-  font-size: 15px;
-  color: var(--text-muted-55);
+  background: var(--input-bg);
+  color: var(--text);
   cursor: pointer;
   border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cook__exit:hover {
-  background: rgba(32, 30, 29, 0.07);
+  filter: brightness(0.97);
 }
+
+.cook__topbar-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.cook__step-counter {
+  font-size: 12.5px;
+  color: var(--text-muted-55);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.cook__awake-pill {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--accent-active);
+}
+
+/* ── progress ─────────────────────────────────────────────────────── */
+
+.cook__progress {
+  flex: none;
+  padding: 14px 0 0;
+}
+
+.cook__progress-track {
+  display: flex;
+  gap: 5px;
+  height: 7px;
+}
+
+.cook__progress-seg {
+  border-radius: 999px;
+  background: var(--ring-track);
+}
+
+.cook__progress-seg--done {
+  background: var(--accent);
+}
+
+.cook__progress-seg--current {
+  background: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.cook__progress-dots {
+  display: flex;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+.cook__progress-dot-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8px;
+}
+
+.cook__progress-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text) 30%, transparent);
+  display: block;
+}
+
+.cook__progress-dot--current {
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+}
+
+/* ── body ─────────────────────────────────────────────────────────── */
 
 .cook__body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 28px;
+  gap: 22px;
   min-height: 0;
   overflow-y: auto;
+  padding-top: 18px;
+}
+
+.cook__step-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.cook__step-n {
+  font-family: var(--font-display);
+  font-size: 44px;
+  line-height: 0.8;
+  color: color-mix(in srgb, var(--accent) 40%, transparent);
+  flex: none;
 }
 
 .cook__step-text {
-  font-size: 34px;
-  line-height: 1.28;
+  font-size: 24px;
+  line-height: 1.32;
   font-weight: 600;
   letter-spacing: -0.01em;
   text-wrap: pretty;
   color: var(--text);
 }
 
+/* ── timer ────────────────────────────────────────────────────────── */
+
 .cook__timer {
+  margin-top: auto;
+  padding-bottom: 8px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  align-items: center;
+  gap: 18px;
 }
 
-.cook__timer-display {
-  font-family: var(--font-display);
-  font-size: 64px;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  font-variant-numeric: tabular-nums;
-  color: var(--text);
-}
-
-.cook__timer-btn {
-  height: 60px;
-  border-radius: 999px;
-  font-family: var(--font-display);
-  font-size: 19px;
-  cursor: pointer;
-}
-
-.cook__timer-btn--start {
-  border: none;
-  background: var(--accent);
-  color: var(--accent-on);
-}
-
-.cook__timer-btn--start:hover {
-  background: var(--accent-hover);
-}
-
-.cook__timer-btn--pause {
-  border: 1px solid var(--accent);
-  background: transparent;
-  color: var(--accent-active);
-}
-
-.cook__timer-btn--pause:hover {
-  background: rgba(198, 113, 57, 0.12);
-}
-
-.cook__timer-done {
-  height: 60px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-on);
-  font-family: var(--font-display);
-  font-size: 19px;
+.cook__ring {
+  position: relative;
+  width: 236px;
+  height: 236px;
+  max-width: 62vw;
+  max-height: 62vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.cook__ring-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.cook__ring-progress {
+  transition: stroke-dashoffset 0.25s linear;
+}
+
+.cook__ring-halo {
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent-2) 32%, transparent);
+  animation: cookHaloPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes cookHaloPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.18;
+  }
+}
+
+.cook__ring-center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.cook__ring-time {
+  font-family: var(--font-display);
+  font-size: 50px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.cook__ring-time--idle {
+  color: color-mix(in srgb, var(--text) 45%, transparent);
+}
+
+.cook__ring-caption {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted-55);
+}
+
+.cook__ring--running .cook__ring-caption {
+  color: var(--accent-active);
+}
+
+.cook__ring-check {
+  color: var(--accent-2-active);
+  display: flex;
+}
+
+.cook__ring-done-text {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--accent-2-active);
+}
+
+.cook__ring--done .cook__ring-caption {
+  color: var(--accent-2-active);
+}
+
+.cook__timer-btn {
+  height: 56px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 17px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 26px;
+}
+
+.cook__timer-btn--start {
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  background: transparent;
+  color: var(--accent-active);
+}
+
+.cook__timer-btn--start:hover {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.cook__timer-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.cook__timer-btn--secondary {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+}
+
+.cook__timer-btn--secondary:hover {
+  background: rgba(32, 30, 29, 0.06);
+}
+
+.cook__timer-btn--ghost {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted-55);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.cook__timer-btn--ghost:hover {
+  background: rgba(32, 30, 29, 0.06);
+}
+
+/* ── nav ──────────────────────────────────────────────────────────── */
+
 .cook__nav {
   flex: none;
   display: flex;
   gap: 12px;
-  padding-top: 16px;
+  padding-top: 14px;
 }
 
 .cook__prev {
   flex: none;
-  width: 96px;
-  height: 96px;
+  width: 76px;
+  height: 68px;
   border: 1px solid var(--border);
-  border-radius: 32px;
+  border-radius: 26px;
   background: transparent;
-  font-size: 34px;
   color: var(--text);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cook__prev:hover:not(:disabled) {
@@ -142,18 +334,18 @@
 
 .cook__next {
   flex: 1;
-  height: 96px;
+  height: 68px;
   border: none;
-  border-radius: 32px;
+  border-radius: 26px;
   background: var(--accent);
   color: var(--accent-on);
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .cook__next:hover:not(:disabled) {
@@ -165,10 +357,10 @@
   cursor: default;
 }
 
-.cook__awake-note {
-  flex: none;
-  text-align: center;
-  font-size: 12px;
-  color: rgba(32, 30, 29, 0.38);
-  padding-top: 10px;
+.cook__next--done {
+  background: var(--accent-2);
+}
+
+.cook__next--done:hover:not(:disabled) {
+  background: var(--accent-2-hover);
 }
