@@ -7,6 +7,7 @@ import Recipe from './pages/Recipe'
 import CookMode from './pages/CookMode'
 import RanOut from './pages/RanOut'
 import Profile from './pages/Profile'
+import Shopping from './pages/Shopping'
 import BottomNav from './components/BottomNav'
 import Toast from './components/Toast'
 import { getMe, logout } from './api'
@@ -22,8 +23,9 @@ type Screen =
   | { name: 'cook'; recipeId: number; steps: RecipeStep[]; from: 'pantry' | 'suggest' }
   | { name: 'ranOut'; usedItems: UsedPantryItem[]; cookLogId: number }
   | { name: 'profile' }
+  | { name: 'shopping' }
 
-const NAV_SCREENS = new Set(['pantry', 'suggest', 'profile'])
+const NAV_SCREENS = new Set(['pantry', 'suggest', 'shopping', 'profile'])
 
 function App() {
   const [auth, setAuth] = useState<AuthState>({ status: 'checking' })
@@ -127,12 +129,17 @@ function App() {
 
       {screen.name === 'profile' && <Profile onFlash={flash} />}
 
+      {screen.name === 'shopping' && (
+        <Shopping onFlash={flash} onTicked={() => setPantryVersion((v) => v + 1)} />
+      )}
+
       {NAV_SCREENS.has(screen.name) && (
         <BottomNav
           active={screen.name}
           onNavigate={(tab) => {
             if (tab === 'pantry') setScreen({ name: 'pantry' })
             else if (tab === 'suggest') setScreen({ name: 'suggest' })
+            else if (tab === 'shopping') setScreen({ name: 'shopping' })
             else setScreen({ name: 'profile' })
           }}
         />

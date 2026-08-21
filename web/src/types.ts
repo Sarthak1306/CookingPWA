@@ -89,3 +89,13 @@ export type TasteProfile = {
   body_text: string
   updated_at: string
 }
+
+export type ShoppingItem = {
+  id: number
+  ingredient_id: number
+  name: string
+  color: string
+  emoji: string
+  added_from: string
+  added_at: string
+}

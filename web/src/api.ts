@@ -4,6 +4,7 @@ import type {
   JobStatus,
   PantryItem,
   RecipeDetail,
+  ShoppingItem,
   TasteProfile,
 } from './types'
 
@@ -106,6 +107,28 @@ export function addToShoppingList(ingredientId: number, addedFrom: string = 'rec
     method: 'POST',
     body: JSON.stringify({ ingredient_id: ingredientId, added_from: addedFrom }),
   })
+}
+
+export function getShoppingList() {
+  return request<ShoppingItem[]>('/api/shopping')
+}
+
+export function addShoppingItemByName(name: string) {
+  return request<{ ingredient_id: number; name: string; on_list: boolean }>('/api/shopping', {
+    method: 'POST',
+    body: JSON.stringify({ name, added_from: 'manual' }),
+  })
+}
+
+export function tickShoppingItem(id: number) {
+  return request<{ ingredient_id: number; name: string; qty_label: string; pantry_item_id: number }>(
+    `/api/shopping/${id}/tick`,
+    { method: 'POST' },
+  )
+}
+
+export function removeShoppingItem(id: number) {
+  return request<{ ok: boolean }>(`/api/shopping/${id}`, { method: 'DELETE' })
 }
 
 export function rateCookLog(cookLogId: number, rating: number) {
