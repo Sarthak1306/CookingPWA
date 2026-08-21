@@ -5,7 +5,10 @@
 }
 
 :root {
-  --bg: #e6dac4;
+  /* The design's #e6dac4 is the desktop backdrop *around* its phone
+     mockup — irrelevant on a real phone, where the app IS the whole
+     screen, so --surface (the mockup's screen color) is the only
+     background used throughout. */
   --surface: #f5ead8;
   --input-bg: #ebddc5;
   --border: rgba(32, 30, 29, 0.16);
@@ -26,7 +29,7 @@ html,
 body {
   margin: 0;
   height: 100%;
-  background: var(--bg);
+  background: var(--surface);
   color: var(--text);
   font-family: var(--font-body);
   -webkit-tap-highlight-color: transparent;
