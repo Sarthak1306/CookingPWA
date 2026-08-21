@@ -35,6 +35,46 @@
   gap: 8px;
 }
 
+.ran-out__rating {
+  padding: 4px 4px 12px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.ran-out__rating-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.ran-out__rating-row {
+  display: flex;
+  gap: 8px;
+}
+
+.ran-out__rating-btn {
+  flex: 1;
+  height: 48px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--input-bg);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.ran-out__rating-btn:hover {
+  background: #e2d1b3;
+}
+
+.ran-out__rating-btn--active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-on);
+}
+
 .ran-out__empty {
   padding: 24px 4px;
   font-size: 15px;

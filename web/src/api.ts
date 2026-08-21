@@ -1,4 +1,11 @@
-import type { CookResult, IngredientSuggestion, JobStatus, PantryItem, RecipeDetail } from './types'
+import type {
+  CookResult,
+  IngredientSuggestion,
+  JobStatus,
+  PantryItem,
+  RecipeDetail,
+  TasteProfile,
+} from './types'
 
 export class ApiError extends Error {
   status: number
@@ -99,4 +106,19 @@ export function addToShoppingList(ingredientId: number, addedFrom: string = 'rec
     method: 'POST',
     body: JSON.stringify({ ingredient_id: ingredientId, added_from: addedFrom }),
   })
+}
+
+export function rateCookLog(cookLogId: number, rating: number) {
+  return request<{ ok: boolean }>(`/api/cook-log/${cookLogId}/rate`, {
+    method: 'POST',
+    body: JSON.stringify({ rating }),
+  })
+}
+
+export function getTasteProfile() {
+  return request<TasteProfile>('/api/taste-profile')
+}
+
+export function updateTasteProfile(body: { effort?: string; tags?: string[]; body_text?: string }) {
+  return request<TasteProfile>('/api/taste-profile', { method: 'PATCH', body: JSON.stringify(body) })
 }

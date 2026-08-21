@@ -120,7 +120,7 @@ export default function Recipe({
         <div className="recipe__title">{recipe.title}</div>
         <div className="recipe__meta">
           {recipe.est_minutes != null && `${recipe.est_minutes} min · `}
-          {servings} servings
+          {servings} servings · <span className="recipe__difficulty">{recipe.difficulty}</span>
         </div>
 
         <div className="recipe__servings-row">

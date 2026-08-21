@@ -10,13 +10,15 @@ class OpenRouterError(Exception):
     pass
 
 
-async def chat_completion(messages: list[dict], tools: list[dict] | None = None) -> dict:
+async def chat_completion(
+    messages: list[dict], tools: list[dict] | None = None, model: str | None = None
+) -> dict:
     """One call to OpenRouter's chat completions endpoint. Returns the
     assistant message dict (role, content, tool_calls?). Raises
     OpenRouterError on any non-2xx response or network failure — the
     caller (the job worker) is what turns that into a visible, retryable
     error rather than an indefinite spinner."""
-    body = {"model": settings.model_name, "messages": messages}
+    body = {"model": model or settings.model_name, "messages": messages}
     if tools:
         body["tools"] = tools
         body["tool_choice"] = "auto"

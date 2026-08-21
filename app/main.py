@@ -8,7 +8,7 @@ from fastapi.staticfiles import StaticFiles
 from app.config import settings
 from app.db import apply_migrations, sync_canonical_ingredients
 from app.jobs import worker_loop
-from app.routes import auth, health, pantry, shopping, suggest
+from app.routes import auth, health, pantry, profile, shopping, suggest
 
 
 @asynccontextmanager
@@ -32,6 +32,7 @@ app.include_router(auth.router)
 app.include_router(pantry.router)
 app.include_router(suggest.router)
 app.include_router(shopping.router)
+app.include_router(profile.router)
 
 static_dir = Path(settings.static_dir)
 if static_dir.exists():

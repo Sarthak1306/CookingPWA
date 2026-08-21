@@ -1,3 +1,4 @@
+import json
 import sqlite3
 
 TOOL_SCHEMAS = [
@@ -79,7 +80,7 @@ def get_pantry(conn: sqlite3.Connection, exclude_ingredient_ids: set[int]) -> li
 def get_recent_meals(conn: sqlite3.Connection, n: int) -> list[dict]:
     rows = conn.execute(
         """
-        SELECT cook_log.cooked_at, recipe.title, recipe.cuisine
+        SELECT cook_log.cooked_at, cook_log.rating, recipe.title, recipe.cuisine
         FROM cook_log JOIN recipe ON recipe.id = cook_log.recipe_id
         ORDER BY cook_log.cooked_at DESC
         LIMIT ?
@@ -87,13 +88,33 @@ def get_recent_meals(conn: sqlite3.Connection, n: int) -> list[dict]:
         (max(1, n),),
     ).fetchall()
     return [
-        {"title": r["title"], "cuisine": r["cuisine"], "cooked_at": r["cooked_at"]} for r in rows
+        {
+            "title": r["title"],
+            "cuisine": r["cuisine"],
+            "cooked_at": r["cooked_at"],
+            "rating": r["rating"],
+        }
+        for r in rows
     ]
 
 
 def get_taste_profile(conn: sqlite3.Connection) -> str:
-    row = conn.execute("SELECT body_text FROM taste_profile WHERE id = 1").fetchone()
-    return row["body_text"] if row else ""
+    """Composes the button-selected effort/tags with the freeform body text
+    into one string — that's the only shape the model ever sees; the three
+    fields are stored separately so the buttons stay independently
+    editable and hand-editable per the UI."""
+    row = conn.execute("SELECT effort, tags_json, body_text FROM taste_profile WHERE id = 1").fetchone()
+    if row is None:
+        return ""
+    tags = json.loads(row["tags_json"] or "[]")
+    parts = []
+    if row["effort"]:
+        parts.append(f"Effort: {row['effort']}.")
+    if tags:
+        parts.append(f"Enjoys: {', '.join(tags)}.")
+    if row["body_text"]:
+        parts.append(row["body_text"])
+    return " ".join(parts)
 
 
 def search_saved_recipes(

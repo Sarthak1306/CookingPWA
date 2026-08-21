@@ -196,6 +196,7 @@ function ResultGroup({
             <span className="suggest__result-title">{r.title}</span>
             <span className="suggest__result-meta">
               {r.est_minutes != null && <span>{r.est_minutes} min</span>}
+              <span className="suggest__result-difficulty">{r.difficulty}</span>
               <span className="suggest__result-have">{r.have_count} have</span>
               {r.missing_count > 0 && (
                 <span className="suggest__result-missing">{r.missing_count} missing</span>

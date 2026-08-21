@@ -20,12 +20,15 @@ export type IngredientSuggestion = {
   emoji: string
 }
 
+export type Difficulty = 'easy' | 'intermediate' | 'advanced'
+
 export type RecipeSummary = {
   id: number
   title: string
   cuisine: string
   est_minutes: number | null
   keeps_well: boolean
+  difficulty: Difficulty
   have_count: number
   missing_count: number
 }
@@ -62,6 +65,7 @@ export type RecipeDetail = {
   cuisine: string
   est_minutes: number | null
   keeps_well: boolean
+  difficulty: Difficulty
   base_servings: number
   servings: number
   ingredients: RecipeIngredient[]
@@ -77,4 +81,11 @@ export type CookResult = {
   cook_log_id: number
   recipe_id: number
   used_pantry_items: UsedPantryItem[]
+}
+
+export type TasteProfile = {
+  effort: string
+  tags: string[]
+  body_text: string
+  updated_at: string
 }

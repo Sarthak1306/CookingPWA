@@ -3,6 +3,7 @@ import json
 import logging
 
 from app.db import get_connection
+from app.llm.rewrite import RewriteError, run_rewrite_profile
 from app.llm.spend_guard import SpendCapExceeded, check_spend_cap
 from app.llm.suggest import SuggestError, run_suggest
 
@@ -30,6 +31,8 @@ async def _process_job(job_id: int) -> None:
 
             if row["kind"] == "suggest":
                 result = await run_suggest(conn, payload["query"], payload.get("avoid", []))
+            elif row["kind"] == "rewrite_profile":
+                result = await run_rewrite_profile(conn)
             else:
                 raise SuggestError("unknown_job_kind", f"Unknown job kind: {row['kind']}")
 
@@ -43,6 +46,11 @@ async def _process_job(job_id: int) -> None:
                 (str(exc), job_id),
             )
         except SuggestError as exc:
+            conn.execute(
+                "UPDATE job SET status = 'error', error = ?, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') WHERE id = ?",
+                (exc.message, job_id),
+            )
+        except RewriteError as exc:
             conn.execute(
                 "UPDATE job SET status = 'error', error = ?, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') WHERE id = ?",
                 (exc.message, job_id),

@@ -78,6 +78,7 @@ def test_suggest_creates_and_saves_a_recipe(auth_client, monkeypatch):
                             "cuisine": "Test",
                             "est_minutes": 20,
                             "keeps_well": False,
+                            "difficulty": "easy",
                             "base_servings": 2,
                             "have_pantry_item_ids": [chicken["id"]],
                             "missing": [{"name": "Test Sauce", "qty": "1", "unit": "jar"}],
@@ -102,12 +103,49 @@ def test_suggest_creates_and_saves_a_recipe(auth_client, monkeypatch):
     assert status["recipes"][0]["title"] == "Test Chicken Bake"
     assert status["recipes"][0]["have_count"] == 1
     assert status["recipes"][0]["missing_count"] == 1
+    assert status["recipes"][0]["difficulty"] == "easy"
 
     recipe_id = status["recipes"][0]["id"]
     detail = auth_client.get(f"/api/recipes/{recipe_id}").json()
     names_have = {i["name"]: i["have"] for i in detail["ingredients"]}
     assert names_have["Chicken thighs"] is True
     assert names_have["Test Sauce"] is False
+    assert detail["difficulty"] == "easy"
+
+
+def test_invalid_difficulty_falls_back_to_intermediate(auth_client, monkeypatch):
+    _script(
+        monkeypatch,
+        [
+            _final_message(
+                {
+                    "results": [
+                        {
+                            "source": "new",
+                            "title": "Test Weird Difficulty",
+                            "cuisine": "Test",
+                            "est_minutes": 20,
+                            "keeps_well": False,
+                            "difficulty": "extremely hard",
+                            "base_servings": 2,
+                            "have_pantry_item_ids": [],
+                            "missing": [],
+                            "steps": [],
+                        }
+                    ]
+                }
+            )
+        ],
+    )
+
+    job = auth_client.post("/api/suggest", json={"query": "anything"}).json()
+
+    import asyncio
+
+    asyncio.run(_process_job(job["job_id"]))
+
+    status = auth_client.get(f"/api/jobs/{job['job_id']}").json()
+    assert status["recipes"][0]["difficulty"] == "intermediate"
 
 
 def test_suggest_rejects_denied_ingredient_after_retry(auth_client, monkeypatch):

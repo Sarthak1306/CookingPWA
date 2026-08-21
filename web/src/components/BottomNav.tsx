@@ -7,14 +7,14 @@ const TABS = [
   { id: 'profile', label: 'Profile' },
 ] as const
 
-const ENABLED = new Set(['pantry', 'suggest'])
+const ENABLED = new Set(['pantry', 'suggest', 'profile'])
 
 export default function BottomNav({
   active,
   onNavigate,
 }: {
   active: string
-  onNavigate: (tab: 'pantry' | 'suggest') => void
+  onNavigate: (tab: 'pantry' | 'suggest' | 'profile') => void
 }) {
   return (
     <nav className="bottom-nav">
@@ -27,7 +27,7 @@ export default function BottomNav({
             className={`bottom-nav__tab${isActive ? ' bottom-nav__tab--active' : ''}`}
             disabled={!isEnabled}
             title={isEnabled ? undefined : 'Coming in a later phase'}
-            onClick={() => isEnabled && onNavigate(tab.id as 'pantry' | 'suggest')}
+            onClick={() => isEnabled && onNavigate(tab.id as 'pantry' | 'suggest' | 'profile')}
           >
             <span className="bottom-nav__dot" />
             <span className="bottom-nav__label">{tab.label}</span>

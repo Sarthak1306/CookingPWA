@@ -10,10 +10,16 @@ from app.llm.spend_guard import SpendCapExceeded, check_spend_cap
 
 router = APIRouter(prefix="/api", dependencies=[Depends(get_current_user)])
 
+REWRITE_EVERY_N_COOKS = 10
+
 
 class SuggestBody(BaseModel):
     query: str = ""
     avoid: list[str] = []
+
+
+class RateBody(BaseModel):
+    rating: int
 
 
 @router.post("/suggest", status_code=202)
@@ -70,6 +76,7 @@ def _recipe_summary(conn: sqlite3.Connection, recipe_id: int) -> dict:
         "cuisine": recipe["cuisine"],
         "est_minutes": recipe["est_minutes"],
         "keeps_well": bool(recipe["keeps_well"]),
+        "difficulty": recipe["difficulty"],
         "have_count": counts["have_count"] or 0,
         "missing_count": counts["missing_count"] or 0,
     }
@@ -108,6 +115,7 @@ def get_recipe(recipe_id: int, servings: int | None = None, conn: sqlite3.Connec
         "cuisine": recipe["cuisine"],
         "est_minutes": recipe["est_minutes"],
         "keeps_well": bool(recipe["keeps_well"]),
+        "difficulty": recipe["difficulty"],
         "base_servings": recipe["base_servings"],
         "servings": servings or recipe["base_servings"],
         "ingredients": [
@@ -145,6 +153,11 @@ def cook_recipe(recipe_id: int, conn: sqlite3.Connection = Depends(get_db)):
     cur = conn.execute("INSERT INTO cook_log (recipe_id) VALUES (?)", (recipe_id,))
     conn.commit()
 
+    (total_cooks,) = conn.execute("SELECT COUNT(*) FROM cook_log").fetchone()
+    if total_cooks % REWRITE_EVERY_N_COOKS == 0:
+        conn.execute("INSERT INTO job (kind, payload_json, status) VALUES ('rewrite_profile', '{}', 'pending')")
+        conn.commit()
+
     used = conn.execute(
         """
         SELECT pantry_item.id AS pantry_item_id, canonical_ingredient.name
@@ -164,3 +177,15 @@ def cook_recipe(recipe_id: int, conn: sqlite3.Connection = Depends(get_db)):
             {"pantry_item_id": r["pantry_item_id"], "name": r["name"]} for r in used
         ],
     }
+
+
+@router.post("/cook-log/{cook_log_id}/rate")
+def rate_cook_log(cook_log_id: int, body: RateBody, conn: sqlite3.Connection = Depends(get_db)):
+    if not 1 <= body.rating <= 5:
+        raise HTTPException(status_code=422, detail="Rating must be between 1 and 5.")
+    row = conn.execute("SELECT id FROM cook_log WHERE id = ?", (cook_log_id,)).fetchone()
+    if row is None:
+        raise HTTPException(status_code=404)
+    conn.execute("UPDATE cook_log SET rating = ? WHERE id = ?", (body.rating, cook_log_id))
+    conn.commit()
+    return {"ok": True}

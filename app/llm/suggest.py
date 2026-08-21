@@ -11,6 +11,7 @@ from app.llm.spend_guard import record_call
 MAX_TOOL_ROUNDS = 6
 MAX_JSON_RETRIES = 2
 MAX_DENY_RETRIES = 1
+ALLOWED_DIFFICULTIES = {"easy", "intermediate", "advanced"}
 
 SYSTEM_PROMPT = """You are a cooking assistant helping one person decide what to cook.
 
@@ -37,6 +38,7 @@ When you are done gathering context, respond with ONLY a single JSON object \
       "cuisine": <string>,
       "est_minutes": <int>,
       "keeps_well": <bool>,
+      "difficulty": "easy" | "intermediate" | "advanced",
       "base_servings": <int, typically 2>,
       "have_pantry_item_ids": [<pantry_item_id from get_pantry, int, ...>],
       "missing": [{"name": <string>, "qty": <string>, "unit": <string>}],
@@ -45,9 +47,9 @@ When you are done gathering context, respond with ONLY a single JSON object \
   ]
 }
 
-For "source": "saved" results, have_pantry_item_ids/missing/steps are ignored — \
-just return the saved_recipe_id, title, cuisine, est_minutes, keeps_well, and \
-base_servings. Return 2 to 5 results, ranked best first."""
+For "source": "saved" results, have_pantry_item_ids/missing/steps/difficulty are \
+ignored — just return the saved_recipe_id, title, cuisine, est_minutes, keeps_well, \
+and base_servings. Return 2 to 5 results, ranked best first."""
 
 
 class SuggestError(Exception):
@@ -155,10 +157,14 @@ def _save_new_recipe(conn: sqlite3.Connection, result: dict) -> int:
     if dup_id is not None:
         return dup_id
 
+    difficulty = result.get("difficulty", "intermediate")
+    if difficulty not in ALLOWED_DIFFICULTIES:
+        difficulty = "intermediate"
+
     cur = conn.execute(
         """
-        INSERT INTO recipe (title, base_servings, source, cuisine, est_minutes, keeps_well)
-        VALUES (?, ?, 'llm', ?, ?, ?)
+        INSERT INTO recipe (title, base_servings, source, cuisine, est_minutes, keeps_well, difficulty)
+        VALUES (?, ?, 'llm', ?, ?, ?, ?)
         """,
         (
             result["title"],
@@ -166,6 +172,7 @@ def _save_new_recipe(conn: sqlite3.Connection, result: dict) -> int:
             result.get("cuisine", ""),
             result.get("est_minutes"),
             bool(result.get("keeps_well", False)),
+            difficulty,
         ),
     )
     recipe_id = cur.lastrowid

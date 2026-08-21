@@ -299,3 +299,7 @@
   color: var(--accent-active);
   font-weight: 600;
 }
+
+.suggest__result-difficulty {
+  text-transform: capitalize;
+}

@@ -6,6 +6,7 @@ import Suggest from './pages/Suggest'
 import Recipe from './pages/Recipe'
 import CookMode from './pages/CookMode'
 import RanOut from './pages/RanOut'
+import Profile from './pages/Profile'
 import BottomNav from './components/BottomNav'
 import Toast from './components/Toast'
 import { getMe, logout } from './api'
@@ -19,9 +20,10 @@ type Screen =
   | { name: 'suggest' }
   | { name: 'recipe'; recipeId: number; from: 'pantry' | 'suggest' }
   | { name: 'cook'; recipeId: number; steps: RecipeStep[]; from: 'pantry' | 'suggest' }
-  | { name: 'ranOut'; usedItems: UsedPantryItem[] }
+  | { name: 'ranOut'; usedItems: UsedPantryItem[]; cookLogId: number }
+  | { name: 'profile' }
 
-const NAV_SCREENS = new Set(['pantry', 'suggest'])
+const NAV_SCREENS = new Set(['pantry', 'suggest', 'profile'])
 
 function App() {
   const [auth, setAuth] = useState<AuthState>({ status: 'checking' })
@@ -106,7 +108,7 @@ function App() {
           recipeId={screen.recipeId}
           steps={screen.steps}
           onExit={() => setScreen({ name: 'recipe', recipeId: screen.recipeId, from: screen.from })}
-          onFinished={(_recipeId, usedItems) => setScreen({ name: 'ranOut', usedItems })}
+          onFinished={(_recipeId, usedItems, cookLogId) => setScreen({ name: 'ranOut', usedItems, cookLogId })}
           onFlash={flash}
         />
       )}
@@ -114,6 +116,7 @@ function App() {
       {screen.name === 'ranOut' && (
         <RanOut
           usedItems={screen.usedItems}
+          cookLogId={screen.cookLogId}
           onFlash={flash}
           onDone={() => {
             setPantryVersion((v) => v + 1)
@@ -122,10 +125,16 @@ function App() {
         />
       )}
 
+      {screen.name === 'profile' && <Profile onFlash={flash} />}
+
       {NAV_SCREENS.has(screen.name) && (
         <BottomNav
           active={screen.name}
-          onNavigate={(tab) => (tab === 'pantry' ? setScreen({ name: 'pantry' }) : setScreen({ name: 'suggest' }))}
+          onNavigate={(tab) => {
+            if (tab === 'pantry') setScreen({ name: 'pantry' })
+            else if (tab === 'suggest') setScreen({ name: 'suggest' })
+            else setScreen({ name: 'profile' })
+          }}
         />
       )}
 

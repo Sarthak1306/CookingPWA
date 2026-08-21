@@ -156,3 +156,58 @@ def test_cook_and_shopping_require_auth(client):
     assert client.post("/api/recipes/1/cook").status_code == 404
     assert client.post("/api/pantry/ran-out", json={"pantry_item_ids": []}).status_code == 404
     assert client.post("/api/shopping", json={"ingredient_id": 1}).status_code == 404
+
+
+def test_rate_cook_log(auth_client):
+    conn = get_connection()
+    recipe_id = _make_recipe(conn, ["Garlic"], [])
+    conn.close()
+
+    cook = auth_client.post(f"/api/recipes/{recipe_id}/cook").json()
+
+    resp = auth_client.post(f"/api/cook-log/{cook['cook_log_id']}/rate", json={"rating": 4})
+    assert resp.status_code == 200
+    assert resp.json() == {"ok": True}
+
+    conn = get_connection()
+    rating = conn.execute(
+        "SELECT rating FROM cook_log WHERE id = ?", (cook["cook_log_id"],)
+    ).fetchone()
+    conn.close()
+    assert rating["rating"] == 4
+
+
+def test_rate_cook_log_rejects_out_of_range(auth_client):
+    conn = get_connection()
+    recipe_id = _make_recipe(conn, ["Garlic"], [])
+    conn.close()
+    cook = auth_client.post(f"/api/recipes/{recipe_id}/cook").json()
+
+    resp = auth_client.post(f"/api/cook-log/{cook['cook_log_id']}/rate", json={"rating": 6})
+    assert resp.status_code == 422
+
+
+def test_rate_unknown_cook_log_404(auth_client):
+    assert auth_client.post("/api/cook-log/999999/rate", json={"rating": 3}).status_code == 404
+
+
+def test_rate_cook_log_requires_auth(client):
+    assert client.post("/api/cook-log/1/rate", json={"rating": 3}).status_code == 404
+
+
+def test_tenth_cook_dispatches_rewrite_profile_job(auth_client):
+    conn = get_connection()
+    recipe_id = _make_recipe(conn, ["Garlic"], [])
+    for _ in range(9):
+        conn.execute("INSERT INTO cook_log (recipe_id) VALUES (?)", (recipe_id,))
+    conn.commit()
+    conn.execute("DELETE FROM job")
+    conn.commit()
+    conn.close()
+
+    auth_client.post(f"/api/recipes/{recipe_id}/cook")
+
+    conn = get_connection()
+    jobs = conn.execute("SELECT kind FROM job").fetchall()
+    conn.close()
+    assert [j["kind"] for j in jobs] == ["rewrite_profile"]

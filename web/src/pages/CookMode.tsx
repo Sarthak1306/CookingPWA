@@ -72,7 +72,7 @@ export default function CookMode({
   recipeId: number
   steps: RecipeStep[]
   onExit: () => void
-  onFinished: (recipeId: number, usedItems: UsedPantryItem[]) => void
+  onFinished: (recipeId: number, usedItems: UsedPantryItem[], cookLogId: number) => void
   onFlash: (msg: string) => void
 }) {
   useWakeLock()
@@ -134,7 +134,7 @@ export default function CookMode({
     setFinishing(true)
     try {
       const result = await cookRecipe(recipeId)
-      onFinished(recipeId, result.used_pantry_items)
+      onFinished(recipeId, result.used_pantry_items, result.cook_log_id)
     } catch (err) {
       onFlash(err instanceof ApiError ? err.message : "Couldn't log that as cooked.")
       setFinishing(false)
