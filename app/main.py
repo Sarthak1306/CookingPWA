@@ -5,14 +5,14 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
 from app.config import settings
-from app.db import apply_migrations, seed_canonical_ingredients
+from app.db import apply_migrations, sync_canonical_ingredients
 from app.routes import auth, health, pantry
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     apply_migrations()
-    seed_canonical_ingredients()
+    sync_canonical_ingredients()
     yield
 
 

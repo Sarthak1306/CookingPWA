@@ -5,7 +5,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "netted bag"
+    "common_purchase_unit": "netted bag",
+    "color": "#ddc9a3",
+    "emoji": "\ud83e\uddc5"
   },
   {
     "name": "Garlic",
@@ -13,7 +15,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "bulb"
+    "common_purchase_unit": "bulb",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\uddc4"
   },
   {
     "name": "Ginger",
@@ -21,7 +25,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "piece"
+    "common_purchase_unit": "piece",
+    "color": "#ddc9a3",
+    "emoji": "\ud83e\uded8"
   },
   {
     "name": "Green chillies",
@@ -29,7 +35,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "pack"
+    "common_purchase_unit": "pack",
+    "color": "#aec98f",
+    "emoji": "\ud83c\udf36\ufe0f"
   },
   {
     "name": "Tomatoes",
@@ -37,7 +45,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " punnet"
+    "common_purchase_unit": " punnet",
+    "color": "#e3a08c",
+    "emoji": "\ud83c\udf45"
   },
   {
     "name": "Tinned tomatoes",
@@ -45,7 +55,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "4",
-    "common_purchase_unit": "-pack"
+    "common_purchase_unit": "-pack",
+    "color": "#e3a08c",
+    "emoji": "\ud83e\udd6b"
   },
   {
     "name": "Potatoes",
@@ -53,7 +65,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "2.5",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#ddc9a3",
+    "emoji": "\ud83e\udd54"
   },
   {
     "name": "Sweet potatoes",
@@ -61,7 +75,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "1",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#f0be84",
+    "emoji": "\ud83c\udf60"
   },
   {
     "name": "Carrots",
@@ -69,7 +85,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "1",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#f0be84",
+    "emoji": "\ud83e\udd55"
   },
   {
     "name": "Spinach",
@@ -77,7 +95,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "200",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#cfdcae",
+    "emoji": "\ud83e\udd6c"
   },
   {
     "name": "Kale",
@@ -85,7 +105,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " bag"
+    "common_purchase_unit": " bag",
+    "color": "#aec98f",
+    "emoji": "\ud83e\udd6c"
   },
   {
     "name": "Coriander",
@@ -93,7 +115,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "bunch"
+    "common_purchase_unit": "bunch",
+    "color": "#cfdcae",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Mint",
@@ -101,7 +125,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "bunch"
+    "common_purchase_unit": "bunch",
+    "color": "#cfdcae",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Parsley",
@@ -109,7 +135,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "bunch"
+    "common_purchase_unit": "bunch",
+    "color": "#cfdcae",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Dill",
@@ -117,7 +145,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "bunch"
+    "common_purchase_unit": "bunch",
+    "color": "#cfdcae",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Basil",
@@ -125,7 +155,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "pot"
+    "common_purchase_unit": "pot",
+    "color": "#cfdcae",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Curry leaves",
@@ -133,7 +165,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "pack"
+    "common_purchase_unit": "pack",
+    "color": "#aec98f",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Lemons",
@@ -141,7 +175,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "3",
-    "common_purchase_unit": "-pack"
+    "common_purchase_unit": "-pack",
+    "color": "#eddf9e",
+    "emoji": "\ud83c\udf4b"
   },
   {
     "name": "Limes",
@@ -149,7 +185,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "4",
-    "common_purchase_unit": "-pack"
+    "common_purchase_unit": "-pack",
+    "color": "#aec98f",
+    "emoji": "\ud83c\udf4b"
   },
   {
     "name": "Cauliflower",
@@ -157,7 +195,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " head"
+    "common_purchase_unit": " head",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\udd66"
   },
   {
     "name": "Cabbage",
@@ -165,7 +205,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " head"
+    "common_purchase_unit": " head",
+    "color": "#cfdcae",
+    "emoji": "\ud83e\udd6c"
   },
   {
     "name": "Green peas",
@@ -173,7 +215,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "400",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#aec98f",
+    "emoji": "\ud83e\udedb"
   },
   {
     "name": "Green beans",
@@ -181,7 +225,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "200",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#aec98f",
+    "emoji": "\ud83e\udedb"
   },
   {
     "name": "Bell peppers",
@@ -189,7 +235,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "3",
-    "common_purchase_unit": "-pack"
+    "common_purchase_unit": "-pack",
+    "color": "#f3d5b3",
+    "emoji": "\ud83e\uded1"
   },
   {
     "name": "Cucumber",
@@ -197,7 +245,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": ""
+    "common_purchase_unit": "",
+    "color": "#cfdcae",
+    "emoji": "\ud83e\udd52"
   },
   {
     "name": "Avocado",
@@ -205,7 +255,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "2",
-    "common_purchase_unit": "-pack"
+    "common_purchase_unit": "-pack",
+    "color": "#aec98f",
+    "emoji": "\ud83e\udd51"
   },
   {
     "name": "Bananas",
@@ -213,7 +265,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " bunch"
+    "common_purchase_unit": " bunch",
+    "color": "#eddf9e",
+    "emoji": "\ud83c\udf4c"
   },
   {
     "name": "Apples",
@@ -221,7 +275,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "6",
-    "common_purchase_unit": "-pack"
+    "common_purchase_unit": "-pack",
+    "color": "#e3a08c",
+    "emoji": "\ud83c\udf4e"
   },
   {
     "name": "Mango",
@@ -229,7 +285,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": ""
+    "common_purchase_unit": "",
+    "color": "#f0be84",
+    "emoji": "\ud83e\udd6d"
   },
   {
     "name": "Eggplant",
@@ -237,7 +295,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": ""
+    "common_purchase_unit": "",
+    "color": "#cdb9d1",
+    "emoji": "\ud83c\udf46"
   },
   {
     "name": "Okra",
@@ -245,7 +305,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "250",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#aec98f",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Beetroot",
@@ -253,7 +315,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " bunch"
+    "common_purchase_unit": " bunch",
+    "color": "#d08a76",
+    "emoji": "\ud83d\udfe3"
   },
   {
     "name": "Radish",
@@ -261,7 +325,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " bunch"
+    "common_purchase_unit": " bunch",
+    "color": "#e3a08c",
+    "emoji": "\ud83d\udfe3"
   },
   {
     "name": "Lettuce",
@@ -269,7 +335,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " head"
+    "common_purchase_unit": " head",
+    "color": "#cfdcae",
+    "emoji": "\ud83e\udd6c"
   },
   {
     "name": "Celery",
@@ -277,7 +345,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " head"
+    "common_purchase_unit": " head",
+    "color": "#cfdcae",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Mushrooms",
@@ -285,7 +355,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "250",
-    "common_purchase_unit": "g punnet"
+    "common_purchase_unit": "g punnet",
+    "color": "#c9a876",
+    "emoji": "\ud83c\udf44"
   },
   {
     "name": "Broccoli",
@@ -293,7 +365,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " head"
+    "common_purchase_unit": " head",
+    "color": "#aec98f",
+    "emoji": "\ud83e\udd66"
   },
   {
     "name": "Zucchini",
@@ -301,7 +375,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "3",
-    "common_purchase_unit": "-pack"
+    "common_purchase_unit": "-pack",
+    "color": "#aec98f",
+    "emoji": "\ud83e\udd52"
   },
   {
     "name": "Sweetcorn",
@@ -309,7 +385,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "2",
-    "common_purchase_unit": "-pack"
+    "common_purchase_unit": "-pack",
+    "color": "#eddf9e",
+    "emoji": "\ud83c\udf3d"
   },
   {
     "name": "Pumpkin",
@@ -317,7 +395,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": ""
+    "common_purchase_unit": "",
+    "color": "#f0be84",
+    "emoji": "\ud83c\udf83"
   },
   {
     "name": "Butternut squash",
@@ -325,7 +405,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": ""
+    "common_purchase_unit": "",
+    "color": "#f0be84",
+    "emoji": "\ud83c\udf83"
   },
   {
     "name": "Spring onions",
@@ -333,7 +415,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "bunch"
+    "common_purchase_unit": "bunch",
+    "color": "#cfdcae",
+    "emoji": "\ud83e\uddc5"
   },
   {
     "name": "Red onions",
@@ -341,7 +425,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " net"
+    "common_purchase_unit": " net",
+    "color": "#e3a08c",
+    "emoji": "\ud83e\uddc5"
   },
   {
     "name": "Shallots",
@@ -349,7 +435,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " net"
+    "common_purchase_unit": " net",
+    "color": "#ddc9a3",
+    "emoji": "\ud83e\uddc5"
   },
   {
     "name": "Fresh turmeric",
@@ -357,7 +445,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "piece"
+    "common_purchase_unit": "piece",
+    "color": "#f0be84",
+    "emoji": "\ud83e\uded8"
   },
   {
     "name": "Bok choy",
@@ -365,7 +455,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " bunch"
+    "common_purchase_unit": " bunch",
+    "color": "#cfdcae",
+    "emoji": "\ud83e\udd6c"
   },
   {
     "name": "Asparagus",
@@ -373,7 +465,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " bunch"
+    "common_purchase_unit": " bunch",
+    "color": "#aec98f",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Brussels sprouts",
@@ -381,7 +475,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "400",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#aec98f",
+    "emoji": "\ud83e\udd6c"
   },
   {
     "name": "Leeks",
@@ -389,7 +485,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " bunch"
+    "common_purchase_unit": " bunch",
+    "color": "#cfdcae",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Fennel bulb",
@@ -397,7 +495,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": ""
+    "common_purchase_unit": "",
+    "color": "#cfdcae",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Chives",
@@ -405,7 +505,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "pot"
+    "common_purchase_unit": "pot",
+    "color": "#cfdcae",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Thai basil",
@@ -413,7 +515,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "pack"
+    "common_purchase_unit": "pack",
+    "color": "#cfdcae",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Lemongrass",
@@ -421,7 +525,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "pack"
+    "common_purchase_unit": "pack",
+    "color": "#cfdcae",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Kaffir lime leaves",
@@ -429,7 +535,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "pack"
+    "common_purchase_unit": "pack",
+    "color": "#aec98f",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Bean sprouts",
@@ -437,7 +545,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " bag"
+    "common_purchase_unit": " bag",
+    "color": "#f0ece1",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Pak choi",
@@ -445,7 +555,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#cfdcae",
+    "emoji": "\ud83e\udd6c"
   },
   {
     "name": "Grapes",
@@ -453,7 +565,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " bag"
+    "common_purchase_unit": " bag",
+    "color": "#cdb9d1",
+    "emoji": "\ud83c\udf47"
   },
   {
     "name": "Oranges",
@@ -461,7 +575,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "5",
-    "common_purchase_unit": "-pack"
+    "common_purchase_unit": "-pack",
+    "color": "#f0be84",
+    "emoji": "\ud83c\udf4a"
   },
   {
     "name": "Strawberries",
@@ -469,7 +585,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "400",
-    "common_purchase_unit": "g punnet"
+    "common_purchase_unit": "g punnet",
+    "color": "#e3a08c",
+    "emoji": "\ud83c\udf53"
   },
   {
     "name": "Blueberries",
@@ -477,7 +595,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "150",
-    "common_purchase_unit": "g punnet"
+    "common_purchase_unit": "g punnet",
+    "color": "#c7d0cd",
+    "emoji": "\ud83e\uded0"
   },
   {
     "name": "Pineapple",
@@ -485,7 +605,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": ""
+    "common_purchase_unit": "",
+    "color": "#eddf9e",
+    "emoji": "\ud83c\udf4d"
   },
   {
     "name": "Watermelon",
@@ -493,7 +615,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": ""
+    "common_purchase_unit": "",
+    "color": "#d08a76",
+    "emoji": "\ud83c\udf49"
   },
   {
     "name": "Pomegranate",
@@ -501,7 +625,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": ""
+    "common_purchase_unit": "",
+    "color": "#d08a76",
+    "emoji": "\ud83c\udf47"
   },
   {
     "name": "Papaya",
@@ -509,7 +635,9 @@
     "category": "Produce",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": ""
+    "common_purchase_unit": "",
+    "color": "#f0be84",
+    "emoji": "\ud83e\udd6d"
   },
   {
     "name": "Milk",
@@ -517,7 +645,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "2",
-    "common_purchase_unit": "L"
+    "common_purchase_unit": "L",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\udd5b"
   },
   {
     "name": "Butter",
@@ -525,7 +655,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "250",
-    "common_purchase_unit": "g block"
+    "common_purchase_unit": "g block",
+    "color": "#eddf9e",
+    "emoji": "\ud83e\uddc8"
   },
   {
     "name": "Ghee",
@@ -533,7 +665,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g jar"
+    "common_purchase_unit": "g jar",
+    "color": "#eddf9e",
+    "emoji": "\ud83e\uddc8"
   },
   {
     "name": "Yoghurt",
@@ -541,7 +675,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g tub"
+    "common_purchase_unit": "g tub",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\udd63"
   },
   {
     "name": "Paneer",
@@ -549,7 +685,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "200",
-    "common_purchase_unit": "g block"
+    "common_purchase_unit": "g block",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\uddc0"
   },
   {
     "name": "Feta",
@@ -557,7 +695,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "200",
-    "common_purchase_unit": "g block"
+    "common_purchase_unit": "g block",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\uddc0"
   },
   {
     "name": "Halloumi",
@@ -565,7 +705,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "225",
-    "common_purchase_unit": "g block"
+    "common_purchase_unit": "g block",
+    "color": "#f2e8c2",
+    "emoji": "\ud83e\uddc0"
   },
   {
     "name": "Mozzarella",
@@ -573,7 +715,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "125",
-    "common_purchase_unit": "g ball"
+    "common_purchase_unit": "g ball",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\uddc0"
   },
   {
     "name": "Cheddar",
@@ -581,7 +725,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "200",
-    "common_purchase_unit": "g block"
+    "common_purchase_unit": "g block",
+    "color": "#eddf9e",
+    "emoji": "\ud83e\uddc0"
   },
   {
     "name": "Parmesan",
@@ -589,7 +735,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "150",
-    "common_purchase_unit": "g wedge"
+    "common_purchase_unit": "g wedge",
+    "color": "#f2e8c2",
+    "emoji": "\ud83e\uddc0"
   },
   {
     "name": "Cream cheese",
@@ -597,7 +745,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "200",
-    "common_purchase_unit": "g tub"
+    "common_purchase_unit": "g tub",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\uddc0"
   },
   {
     "name": "Sour cream",
@@ -605,7 +755,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "300",
-    "common_purchase_unit": "ml tub"
+    "common_purchase_unit": "ml tub",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\udd5b"
   },
   {
     "name": "Double cream",
@@ -613,7 +765,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "300",
-    "common_purchase_unit": "ml carton"
+    "common_purchase_unit": "ml carton",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\udd5b"
   },
   {
     "name": "Coconut milk",
@@ -621,7 +775,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "tin"
+    "common_purchase_unit": "tin",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\udd65"
   },
   {
     "name": "Coconut cream",
@@ -629,7 +785,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "tin"
+    "common_purchase_unit": "tin",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\udd65"
   },
   {
     "name": "Eggs",
@@ -637,7 +795,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "dozen"
+    "common_purchase_unit": "dozen",
+    "color": "#f2e8c2",
+    "emoji": "\ud83e\udd5a"
   },
   {
     "name": "Buttermilk",
@@ -645,7 +805,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "ml carton"
+    "common_purchase_unit": "ml carton",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\udd5b"
   },
   {
     "name": "Condensed milk",
@@ -653,7 +815,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "tin"
+    "common_purchase_unit": "tin",
+    "color": "#f2e8c2",
+    "emoji": "\ud83e\udd5b"
   },
   {
     "name": "Oat milk",
@@ -661,7 +825,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "1",
-    "common_purchase_unit": "L carton"
+    "common_purchase_unit": "L carton",
+    "color": "#ddc9a3",
+    "emoji": "\ud83e\udd5b"
   },
   {
     "name": "Almond milk",
@@ -669,7 +835,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "1",
-    "common_purchase_unit": "L carton"
+    "common_purchase_unit": "L carton",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\udd5b"
   },
   {
     "name": "Whipping cream",
@@ -677,7 +845,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "300",
-    "common_purchase_unit": "ml carton"
+    "common_purchase_unit": "ml carton",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\udd5b"
   },
   {
     "name": "Mascarpone",
@@ -685,7 +855,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "250",
-    "common_purchase_unit": "g tub"
+    "common_purchase_unit": "g tub",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\uddc0"
   },
   {
     "name": "Ricotta",
@@ -693,7 +865,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "250",
-    "common_purchase_unit": "g tub"
+    "common_purchase_unit": "g tub",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\uddc0"
   },
   {
     "name": "Cottage cheese",
@@ -701,7 +875,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "300",
-    "common_purchase_unit": "g tub"
+    "common_purchase_unit": "g tub",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\uddc0"
   },
   {
     "name": "Labneh",
@@ -709,7 +885,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "200",
-    "common_purchase_unit": "g tub"
+    "common_purchase_unit": "g tub",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\udd63"
   },
   {
     "name": "Ice cream",
@@ -717,7 +895,9 @@
     "category": "Dairy",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " tub"
+    "common_purchase_unit": " tub",
+    "color": "#f2e8c2",
+    "emoji": "\ud83c\udf68"
   },
   {
     "name": "Rice",
@@ -725,7 +905,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "1",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#f0ece1",
+    "emoji": "\ud83c\udf5a"
   },
   {
     "name": "Basmati rice",
@@ -733,7 +915,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "1",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#f0ece1",
+    "emoji": "\ud83c\udf5a"
   },
   {
     "name": "Brown rice",
@@ -741,7 +925,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "1",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#ddc9a3",
+    "emoji": "\ud83c\udf5a"
   },
   {
     "name": "Orzo",
@@ -749,7 +935,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#f2e8c2",
+    "emoji": "\ud83c\udf5d"
   },
   {
     "name": "Pasta",
@@ -757,7 +945,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#f2e8c2",
+    "emoji": "\ud83c\udf5d"
   },
   {
     "name": "Spaghetti",
@@ -765,7 +955,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#f2e8c2",
+    "emoji": "\ud83c\udf5d"
   },
   {
     "name": "Couscous",
@@ -773,7 +965,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#f2e8c2",
+    "emoji": "\ud83c\udf5a"
   },
   {
     "name": "Quinoa",
@@ -781,7 +975,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#ddc9a3",
+    "emoji": "\ud83c\udf5a"
   },
   {
     "name": "Flour",
@@ -789,7 +985,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "1.5",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#f0ece1",
+    "emoji": "\ud83c\udf3e"
   },
   {
     "name": "Wholemeal flour",
@@ -797,7 +995,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "1.5",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#ddc9a3",
+    "emoji": "\ud83c\udf3e"
   },
   {
     "name": "Besan (chickpea flour)",
@@ -805,7 +1005,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "1",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#eddf9e",
+    "emoji": ""
   },
   {
     "name": "Oats",
@@ -813,7 +1015,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "1",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#ddc9a3",
+    "emoji": "\ud83c\udf3e"
   },
   {
     "name": "Breadcrumbs",
@@ -821,7 +1025,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": ", ",
-    "common_purchase_unit": "pack"
+    "common_purchase_unit": "pack",
+    "color": "#ddc9a3",
+    "emoji": "\ud83c\udf5e"
   },
   {
     "name": "Bread",
@@ -829,7 +1035,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " loaf"
+    "common_purchase_unit": " loaf",
+    "color": "#ddc9a3",
+    "emoji": "\ud83c\udf5e"
   },
   {
     "name": "Naan",
@@ -837,7 +1045,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#f2e8c2",
+    "emoji": "\ud83e\uded3"
   },
   {
     "name": "Tortillas",
@@ -845,7 +1055,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#f2e8c2",
+    "emoji": "\ud83e\uded3"
   },
   {
     "name": "Toor dal",
@@ -853,7 +1065,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "1",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#eddf9e",
+    "emoji": "\ud83e\udedb"
   },
   {
     "name": "Moong dal",
@@ -861,7 +1075,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "1",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#aec98f",
+    "emoji": "\ud83e\udedb"
   },
   {
     "name": "Chana dal",
@@ -869,7 +1085,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "1",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#eddf9e",
+    "emoji": "\ud83e\udedb"
   },
   {
     "name": "Masoor dal (red lentils)",
@@ -877,7 +1095,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "1",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#d08a76",
+    "emoji": "\ud83e\udedb"
   },
   {
     "name": "Urad dal",
@@ -885,7 +1105,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#c9a876",
+    "emoji": "\ud83e\udedb"
   },
   {
     "name": "Chickpeas",
@@ -893,7 +1115,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "tin"
+    "common_purchase_unit": "tin",
+    "color": "#ddc9a3",
+    "emoji": "\ud83e\udedb"
   },
   {
     "name": "Kidney beans",
@@ -901,7 +1125,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "tin"
+    "common_purchase_unit": "tin",
+    "color": "#d08a76",
+    "emoji": "\ud83e\udedb"
   },
   {
     "name": "Black beans",
@@ -909,7 +1135,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "tin"
+    "common_purchase_unit": "tin",
+    "color": "#c9a876",
+    "emoji": "\ud83e\udedb"
   },
   {
     "name": "Cannellini beans",
@@ -917,7 +1145,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": "tin"
+    "common_purchase_unit": "tin",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\udedb"
   },
   {
     "name": "Green lentils",
@@ -925,7 +1155,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#aec98f",
+    "emoji": "\ud83e\udedb"
   },
   {
     "name": "Sugar",
@@ -933,7 +1165,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "1",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#f0ece1",
+    "emoji": ""
   },
   {
     "name": "Brown sugar",
@@ -941,7 +1175,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Jaggery",
@@ -949,7 +1185,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g block"
+    "common_purchase_unit": "g block",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Honey",
@@ -957,7 +1195,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "340",
-    "common_purchase_unit": "g jar"
+    "common_purchase_unit": "g jar",
+    "color": "#f0be84",
+    "emoji": "\ud83c\udf6f"
   },
   {
     "name": "Baking powder",
@@ -965,7 +1205,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " tin"
+    "common_purchase_unit": " tin",
+    "color": "#ddc9a3",
+    "emoji": ""
   },
   {
     "name": "Baking soda",
@@ -973,7 +1215,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " box"
+    "common_purchase_unit": " box",
+    "color": "#ddc9a3",
+    "emoji": ""
   },
   {
     "name": "Cornflour",
@@ -981,7 +1225,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " box"
+    "common_purchase_unit": " box",
+    "color": "#ddc9a3",
+    "emoji": ""
   },
   {
     "name": "Poha (flattened rice)",
@@ -989,7 +1235,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#f0ece1",
+    "emoji": "\ud83c\udf5a"
   },
   {
     "name": "Vermicelli",
@@ -997,7 +1245,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "400",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#ddc9a3",
+    "emoji": ""
   },
   {
     "name": "Semolina (rava/sooji)",
@@ -1005,7 +1255,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#ddc9a3",
+    "emoji": ""
   },
   {
     "name": "Rice flour",
@@ -1013,7 +1265,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#f0ece1",
+    "emoji": "\ud83c\udf3e"
   },
   {
     "name": "Puffed rice (murmura)",
@@ -1021,7 +1275,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "200",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#f0ece1",
+    "emoji": "\ud83c\udf5a"
   },
   {
     "name": "Papadum",
@@ -1029,7 +1285,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#ddc9a3",
+    "emoji": ""
   },
   {
     "name": "Rolled oats",
@@ -1037,7 +1295,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "1",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#ddc9a3",
+    "emoji": "\ud83c\udf3e"
   },
   {
     "name": "Muesli",
@@ -1045,7 +1305,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#ddc9a3",
+    "emoji": "\ud83e\udd62"
   },
   {
     "name": "Cereal",
@@ -1053,7 +1315,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " box"
+    "common_purchase_unit": " box",
+    "color": "#ddc9a3",
+    "emoji": "\ud83e\udd62"
   },
   {
     "name": "Noodles",
@@ -1061,7 +1325,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "300",
-    "common_purchase_unit": "g pack"
+    "common_purchase_unit": "g pack",
+    "color": "#f2e8c2",
+    "emoji": "\ud83c\udf5c"
   },
   {
     "name": "Rice noodles",
@@ -1069,7 +1335,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "300",
-    "common_purchase_unit": "g pack"
+    "common_purchase_unit": "g pack",
+    "color": "#f0ece1",
+    "emoji": "\ud83c\udf5c"
   },
   {
     "name": "Panko breadcrumbs",
@@ -1077,7 +1345,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "200",
-    "common_purchase_unit": "g pack"
+    "common_purchase_unit": "g pack",
+    "color": "#f0ece1",
+    "emoji": "\ud83c\udf5e"
   },
   {
     "name": "Pita bread",
@@ -1085,7 +1355,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#ddc9a3",
+    "emoji": "\ud83c\udf5e"
   },
   {
     "name": "Yeast",
@@ -1093,7 +1365,9 @@
     "category": "Grains",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " sachet"
+    "common_purchase_unit": " sachet",
+    "color": "#ddc9a3",
+    "emoji": ""
   },
   {
     "name": "Cumin seeds",
@@ -1101,7 +1375,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Cumin powder",
@@ -1109,7 +1385,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Coriander seeds",
@@ -1117,7 +1395,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Coriander powder",
@@ -1125,7 +1405,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Turmeric",
@@ -1133,7 +1415,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#eddf9e",
+    "emoji": ""
   },
   {
     "name": "Garam masala",
@@ -1141,7 +1425,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Chilli powder",
@@ -1149,7 +1435,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#d08a76",
+    "emoji": "\ud83c\udf36\ufe0f"
   },
   {
     "name": "Chilli flakes",
@@ -1157,7 +1445,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#d08a76",
+    "emoji": "\ud83c\udf36\ufe0f"
   },
   {
     "name": "Kashmiri chilli powder",
@@ -1165,7 +1455,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#d08a76",
+    "emoji": "\ud83c\udf36\ufe0f"
   },
   {
     "name": "Mustard seeds",
@@ -1173,7 +1465,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Fennel seeds",
@@ -1181,7 +1475,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Fenugreek seeds",
@@ -1189,7 +1485,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Asafoetida (hing)",
@@ -1197,7 +1495,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " tin"
+    "common_purchase_unit": " tin",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Cardamom pods",
@@ -1205,7 +1505,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Cinnamon sticks",
@@ -1213,7 +1515,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Cloves",
@@ -1221,7 +1525,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Bay leaves",
@@ -1229,7 +1535,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#aec98f",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Black peppercorns",
@@ -1237,7 +1545,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " grinder"
+    "common_purchase_unit": " grinder",
+    "color": "#4a4340",
+    "emoji": "\u26ab"
   },
   {
     "name": "Black pepper",
@@ -1245,7 +1555,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " grinder"
+    "common_purchase_unit": " grinder",
+    "color": "#4a4340",
+    "emoji": "\u26ab"
   },
   {
     "name": "Smoked paprika",
@@ -1253,7 +1565,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#d08a76",
+    "emoji": "\ud83c\udf36\ufe0f"
   },
   {
     "name": "Paprika",
@@ -1261,7 +1575,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#d08a76",
+    "emoji": "\ud83c\udf36\ufe0f"
   },
   {
     "name": "Salt",
@@ -1269,7 +1585,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "1",
-    "common_purchase_unit": "kg bag"
+    "common_purchase_unit": "kg bag",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\uddc2"
   },
   {
     "name": "Nutmeg",
@@ -1277,7 +1595,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Saffron",
@@ -1285,7 +1605,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#f0be84",
+    "emoji": "\ud83e\udde1"
   },
   {
     "name": "Tamarind paste",
@@ -1293,7 +1615,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "200",
-    "common_purchase_unit": "g pack"
+    "common_purchase_unit": "g pack",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Curry powder",
@@ -1301,7 +1625,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Dried oregano",
@@ -1309,7 +1635,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#aec98f",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Dried basil",
@@ -1317,7 +1645,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#aec98f",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Dried thyme",
@@ -1325,7 +1655,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#aec98f",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Chaat masala",
@@ -1333,7 +1665,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Amchur (dry mango powder)",
@@ -1341,7 +1675,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Star anise",
@@ -1349,7 +1685,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Sesame seeds",
@@ -1357,7 +1695,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Poppy seeds",
@@ -1365,7 +1705,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Vanilla extract",
@@ -1373,7 +1715,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " bottle"
+    "common_purchase_unit": " bottle",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Cayenne pepper",
@@ -1381,7 +1725,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#d08a76",
+    "emoji": "\ud83c\udf36\ufe0f"
   },
   {
     "name": "Onion powder",
@@ -1389,7 +1735,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#ddc9a3",
+    "emoji": "\ud83e\uddc5"
   },
   {
     "name": "Garlic powder",
@@ -1397,7 +1745,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\uddc4"
   },
   {
     "name": "Chilli oil",
@@ -1405,7 +1755,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " bottle"
+    "common_purchase_unit": " bottle",
+    "color": "#d08a76",
+    "emoji": "\ud83c\udf36\ufe0f"
   },
   {
     "name": "Msg / Ajinomoto",
@@ -1413,7 +1765,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "White pepper",
@@ -1421,7 +1775,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#f0ece1",
+    "emoji": "\u26aa"
   },
   {
     "name": "Ground ginger",
@@ -1429,7 +1785,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#ddc9a3",
+    "emoji": "\ud83e\uded8"
   },
   {
     "name": "Ground cinnamon",
@@ -1437,7 +1795,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Allspice",
@@ -1445,7 +1805,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Five spice",
@@ -1453,7 +1815,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Za'atar",
@@ -1461,7 +1825,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#c9a876",
+    "emoji": ""
   },
   {
     "name": "Sumac",
@@ -1469,7 +1835,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#d08a76",
+    "emoji": ""
   },
   {
     "name": "Herbes de Provence",
@@ -1477,7 +1845,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#aec98f",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Dried rosemary",
@@ -1485,7 +1855,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#aec98f",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Dried mint",
@@ -1493,7 +1865,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#aec98f",
+    "emoji": "\ud83c\udf3f"
   },
   {
     "name": "Chili crisp",
@@ -1501,7 +1875,9 @@
     "category": "Spices",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " jar"
+    "common_purchase_unit": " jar",
+    "color": "#d08a76",
+    "emoji": "\ud83c\udf36\ufe0f"
   },
   {
     "name": "Chicken thighs",
@@ -1509,7 +1885,9 @@
     "category": "Proteins",
     "deny_flag": false,
     "common_purchase_qty": "6",
-    "common_purchase_unit": "-pack"
+    "common_purchase_unit": "-pack",
+    "color": "#e8b8a8",
+    "emoji": "\ud83c\udf57"
   },
   {
     "name": "Chicken breast",
@@ -1517,7 +1895,9 @@
     "category": "Proteins",
     "deny_flag": false,
     "common_purchase_qty": "4",
-    "common_purchase_unit": "-pack"
+    "common_purchase_unit": "-pack",
+    "color": "#e8b8a8",
+    "emoji": "\ud83c\udf57"
   },
   {
     "name": "Chicken mince",
@@ -1525,7 +1905,9 @@
     "category": "Proteins",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g pack"
+    "common_purchase_unit": "g pack",
+    "color": "#e8b8a8",
+    "emoji": "\ud83c\udf57"
   },
   {
     "name": "Whole chicken",
@@ -1533,7 +1915,9 @@
     "category": "Proteins",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": ""
+    "common_purchase_unit": "",
+    "color": "#e8b8a8",
+    "emoji": "\ud83d\udc14"
   },
   {
     "name": "Tofu",
@@ -1541,7 +1925,9 @@
     "category": "Proteins",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " block"
+    "common_purchase_unit": " block",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\uddc8"
   },
   {
     "name": "Firm tofu",
@@ -1549,7 +1935,9 @@
     "category": "Proteins",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " block"
+    "common_purchase_unit": " block",
+    "color": "#f0ece1",
+    "emoji": "\ud83e\uddc8"
   },
   {
     "name": "Salmon fillets",
@@ -1557,7 +1945,9 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "2",
-    "common_purchase_unit": "-pack"
+    "common_purchase_unit": "-pack",
+    "color": "#e3a08c",
+    "emoji": "\ud83d\udc1f"
   },
   {
     "name": "Prawns",
@@ -1565,7 +1955,9 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "",
-    "common_purchase_unit": " bag"
+    "common_purchase_unit": " bag",
+    "color": "#c7d0cd",
+    "emoji": "\ud83e\udd90"
   },
   {
     "name": "Shrimp",
@@ -1573,7 +1965,9 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "",
-    "common_purchase_unit": " bag"
+    "common_purchase_unit": " bag",
+    "color": "#c7d0cd",
+    "emoji": "\ud83e\udd90"
   },
   {
     "name": "White fish fillets",
@@ -1581,7 +1975,9 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "2",
-    "common_purchase_unit": "-pack"
+    "common_purchase_unit": "-pack",
+    "color": "#c7d0cd",
+    "emoji": "\ud83d\udc1f"
   },
   {
     "name": "Tinned tuna",
@@ -1589,7 +1985,9 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "",
-    "common_purchase_unit": " tin"
+    "common_purchase_unit": " tin",
+    "color": "#c7d0cd",
+    "emoji": "\ud83d\udc1f"
   },
   {
     "name": "Bacon",
@@ -1597,7 +1995,9 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#d08a76",
+    "emoji": "\ud83e\udd53"
   },
   {
     "name": "Pork chops",
@@ -1605,7 +2005,9 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "2",
-    "common_purchase_unit": "-pack"
+    "common_purchase_unit": "-pack",
+    "color": "#d08a76",
+    "emoji": "\ud83d\udc16"
   },
   {
     "name": "Pork mince",
@@ -1613,7 +2015,9 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g pack"
+    "common_purchase_unit": "g pack",
+    "color": "#d08a76",
+    "emoji": "\ud83d\udc16"
   },
   {
     "name": "Sausages",
@@ -1621,7 +2025,9 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#d08a76",
+    "emoji": "\ud83c\udf2d"
   },
   {
     "name": "Ham",
@@ -1629,7 +2035,9 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#d08a76",
+    "emoji": "\ud83c\udf56"
   },
   {
     "name": "Beef mince",
@@ -1637,7 +2045,9 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g pack"
+    "common_purchase_unit": "g pack",
+    "color": "#d08a76",
+    "emoji": "\ud83d\udc04"
   },
   {
     "name": "Beef steak",
@@ -1645,7 +2055,9 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "2",
-    "common_purchase_unit": "-pack"
+    "common_purchase_unit": "-pack",
+    "color": "#d08a76",
+    "emoji": "\ud83e\udd69"
   },
   {
     "name": "Chorizo",
@@ -1653,7 +2065,9 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#d08a76",
+    "emoji": "\ud83c\udf2d"
   },
   {
     "name": "Tempeh",
@@ -1661,7 +2075,9 @@
     "category": "Proteins",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " block"
+    "common_purchase_unit": " block",
+    "color": "#ddc9a3",
+    "emoji": "\ud83e\uddc8"
   },
   {
     "name": "Seitan",
@@ -1669,7 +2085,9 @@
     "category": "Proteins",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#ddc9a3",
+    "emoji": "\ud83e\uddc8"
   },
   {
     "name": "Soy chunks",
@@ -1677,7 +2095,9 @@
     "category": "Proteins",
     "deny_flag": false,
     "common_purchase_qty": "200",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#ddc9a3",
+    "emoji": "\ud83e\uddc8"
   },
   {
     "name": "Edamame",
@@ -1685,7 +2105,9 @@
     "category": "Proteins",
     "deny_flag": false,
     "common_purchase_qty": "400",
-    "common_purchase_unit": "g bag"
+    "common_purchase_unit": "g bag",
+    "color": "#aec98f",
+    "emoji": "\ud83e\udedb"
   },
   {
     "name": "Chicken drumsticks",
@@ -1693,7 +2115,9 @@
     "category": "Proteins",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#e8b8a8",
+    "emoji": "\ud83c\udf57"
   },
   {
     "name": "Chicken wings",
@@ -1701,7 +2125,9 @@
     "category": "Proteins",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#e8b8a8",
+    "emoji": "\ud83c\udf57"
   },
   {
     "name": "Turkey mince",
@@ -1709,7 +2135,9 @@
     "category": "Proteins",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g pack"
+    "common_purchase_unit": "g pack",
+    "color": "#e8b8a8",
+    "emoji": "\ud83e\udd83"
   },
   {
     "name": "Duck breast",
@@ -1717,7 +2145,9 @@
     "category": "Proteins",
     "deny_flag": false,
     "common_purchase_qty": "2",
-    "common_purchase_unit": "-pack"
+    "common_purchase_unit": "-pack",
+    "color": "#e8b8a8",
+    "emoji": "\ud83e\udd86"
   },
   {
     "name": "Lamb chops",
@@ -1725,7 +2155,9 @@
     "category": "Proteins",
     "deny_flag": false,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#d08a76",
+    "emoji": "\ud83d\udc11"
   },
   {
     "name": "Lamb mince",
@@ -1733,7 +2165,9 @@
     "category": "Proteins",
     "deny_flag": false,
     "common_purchase_qty": "500",
-    "common_purchase_unit": "g pack"
+    "common_purchase_unit": "g pack",
+    "color": "#d08a76",
+    "emoji": "\ud83d\udc11"
   },
   {
     "name": "Crab meat",
@@ -1741,7 +2175,9 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#c7d0cd",
+    "emoji": "\ud83e\udd80"
   },
   {
     "name": "Mussels",
@@ -1749,7 +2185,9 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "",
-    "common_purchase_unit": " bag"
+    "common_purchase_unit": " bag",
+    "color": "#c7d0cd",
+    "emoji": "\ud83e\uddaa"
   },
   {
     "name": "Squid",
@@ -1757,7 +2195,9 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "",
-    "common_purchase_unit": " pack"
+    "common_purchase_unit": " pack",
+    "color": "#c7d0cd",
+    "emoji": "\ud83e\udd91"
   },
   {
     "name": "Anchovies",
@@ -1765,6 +2205,8 @@
     "category": "Proteins",
     "deny_flag": true,
     "common_purchase_qty": "",
-    "common_purchase_unit": " tin"
+    "common_purchase_unit": " tin",
+    "color": "#c7d0cd",
+    "emoji": "\ud83d\udc1f"
   }
 ]

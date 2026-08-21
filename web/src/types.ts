@@ -6,6 +6,8 @@ export type PantryItem = {
   qty_label: string
   is_low: boolean
   pack: string
+  color: string
+  emoji: string
   updated_at: string
 }
 
@@ -14,4 +16,6 @@ export type IngredientSuggestion = {
   name: string
   category: string
   pack: string
+  color: string
+  emoji: string
 }

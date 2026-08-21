@@ -5,23 +5,6 @@ import './Pantry.css'
 
 const CATEGORIES = ['Produce', 'Dairy', 'Grains', 'Spices', 'Proteins', 'Other']
 
-// Same low-chroma, warm-on-cream swatch family as the design's per-ingredient
-// tints — hashed by name instead of hand-mapped, so it scales past the
-// design's ~26 curated items to the full canonical list.
-const TINTS = [
-  '#f2e4ab', '#e8dbd4', '#d3e0bc', '#f3d5b3', '#e7d9bb', '#f4e4b4',
-  '#eee9df', '#f0ece1', '#efe8da', '#eddcba', '#f0e7d6', '#e8dabf',
-  '#f1e9da', '#e2cba4', '#e7bd9a', '#edbca4', '#dcd3c6', '#edd8bd',
-  '#f3e1b8', '#efe6cd', '#f3cfb7', '#f1e8d3', '#dcdeb8', '#eabdaa',
-  '#d2ddb9', '#ecd6ae',
-]
-
-function tintFor(name: string): string {
-  let hash = 0
-  for (let i = 0; i < name.length; i++) hash = (hash * 31 + name.charCodeAt(i)) | 0
-  return TINTS[Math.abs(hash) % TINTS.length]
-}
-
 export default function Pantry({
   onOpenAdd,
   onOpenEdit,
@@ -118,9 +101,10 @@ export default function Pantry({
                   <div className="pantry__row" key={item.id}>
                     <button
                       className="pantry__item"
-                      style={{ background: tintFor(item.name) }}
+                      style={{ background: item.color }}
                       onClick={() => onOpenEdit(item)}
                     >
+                      {item.emoji && <span className="pantry__item-emoji">{item.emoji}</span>}
                       <div className="pantry__item-text">
                         <div className="pantry__item-name">{item.name}</div>
                         <div className="pantry__item-qty">{item.qty_label || 'no label yet'}</div>

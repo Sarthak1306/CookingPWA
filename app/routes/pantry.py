@@ -9,6 +9,8 @@ from app.auth.security import now_iso
 router = APIRouter(prefix="/api", dependencies=[Depends(get_current_user)])
 
 FALLBACK_CATEGORY = "Other"
+FALLBACK_COLOR = "#e6ddc8"
+FALLBACK_EMOJI = ""  # a made-up ingredient gets a color, not a guessed icon
 
 
 def _pack_label(row: sqlite3.Row) -> str:
@@ -27,7 +29,8 @@ def _pantry_item_out(conn: sqlite3.Connection, pantry_item_id: int) -> dict:
         SELECT pantry_item.id, pantry_item.qty_label, pantry_item.is_low, pantry_item.updated_at,
                canonical_ingredient.id AS ingredient_id, canonical_ingredient.name,
                canonical_ingredient.category, canonical_ingredient.common_purchase_qty,
-               canonical_ingredient.common_purchase_unit
+               canonical_ingredient.common_purchase_unit, canonical_ingredient.color,
+               canonical_ingredient.emoji
         FROM pantry_item JOIN canonical_ingredient ON canonical_ingredient.id = pantry_item.ingredient_id
         WHERE pantry_item.id = ?
         """,
@@ -41,6 +44,8 @@ def _pantry_item_out(conn: sqlite3.Connection, pantry_item_id: int) -> dict:
         "qty_label": row["qty_label"],
         "is_low": bool(row["is_low"]),
         "pack": _pack_label(row),
+        "color": row["color"] or FALLBACK_COLOR,
+        "emoji": row["emoji"] or FALLBACK_EMOJI,
         "updated_at": row["updated_at"],
     }
 
@@ -57,10 +62,11 @@ def _resolve_ingredient_id(conn: sqlite3.Connection, name: str) -> int:
 
     cur = conn.execute(
         """
-        INSERT INTO canonical_ingredient (name, category, default_unit, deny_flag, common_purchase_qty, common_purchase_unit)
-        VALUES (?, ?, '', 0, '', '')
+        INSERT INTO canonical_ingredient
+            (name, category, default_unit, deny_flag, common_purchase_qty, common_purchase_unit, color, emoji)
+        VALUES (?, ?, '', 0, '', '', ?, ?)
         """,
-        (name, FALLBACK_CATEGORY),
+        (name, FALLBACK_CATEGORY, FALLBACK_COLOR, FALLBACK_EMOJI),
     )
     return cur.lastrowid
 
@@ -127,7 +133,8 @@ def list_pantry(conn: sqlite3.Connection = Depends(get_db)):
         SELECT pantry_item.id, pantry_item.qty_label, pantry_item.is_low, pantry_item.updated_at,
                canonical_ingredient.id AS ingredient_id, canonical_ingredient.name,
                canonical_ingredient.category, canonical_ingredient.common_purchase_qty,
-               canonical_ingredient.common_purchase_unit
+               canonical_ingredient.common_purchase_unit, canonical_ingredient.color,
+               canonical_ingredient.emoji
         FROM pantry_item JOIN canonical_ingredient ON canonical_ingredient.id = pantry_item.ingredient_id
         ORDER BY canonical_ingredient.name COLLATE NOCASE
         """
@@ -141,6 +148,8 @@ def list_pantry(conn: sqlite3.Connection = Depends(get_db)):
             "qty_label": r["qty_label"],
             "is_low": bool(r["is_low"]),
             "pack": _pack_label(r),
+            "color": r["color"] or FALLBACK_COLOR,
+            "emoji": r["emoji"] or FALLBACK_EMOJI,
             "updated_at": r["updated_at"],
         }
         for r in rows
@@ -154,7 +163,7 @@ def search_ingredients(q: str = "", conn: sqlite3.Connection = Depends(get_db)):
         return []
     rows = conn.execute(
         """
-        SELECT id, name, category, common_purchase_qty, common_purchase_unit
+        SELECT id, name, category, common_purchase_qty, common_purchase_unit, color, emoji
         FROM canonical_ingredient
         WHERE name LIKE ? ESCAPE '\\'
         ORDER BY name COLLATE NOCASE
@@ -163,7 +172,14 @@ def search_ingredients(q: str = "", conn: sqlite3.Connection = Depends(get_db)):
         ("%" + q.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_") + "%",),
     ).fetchall()
     return [
-        {"id": r["id"], "name": r["name"], "category": r["category"], "pack": _pack_label(r)}
+        {
+            "id": r["id"],
+            "name": r["name"],
+            "category": r["category"],
+            "pack": _pack_label(r),
+            "color": r["color"] or FALLBACK_COLOR,
+            "emoji": r["emoji"] or FALLBACK_EMOJI,
+        }
         for r in rows
     ]
 

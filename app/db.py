@@ -49,27 +49,45 @@ def apply_migrations() -> list[str]:
         conn.close()
 
 
-def seed_canonical_ingredients() -> int:
-    """Load fixtures/canonical_ingredients.json on a fresh DB. No-op once
-    the table has any rows — this seeds the starter list, it doesn't sync
-    it, so hand-added or LLM-added ingredients are never touched."""
+def sync_canonical_ingredients() -> int:
+    """Keep the starter fixture's own rows up to date on every startup —
+    an upsert by name, not a one-time seed. Editing the curated color,
+    emoji, pack size, etc. in fixtures/canonical_ingredients.json and
+    restarting is how those changes reach an existing database. Only rows
+    matching a fixture name are touched, so ingredients created by hand or
+    by the LLM (later phases) are never written to, and pantry_item is
+    never touched at all."""
     conn = get_connection()
     try:
-        (count,) = conn.execute("SELECT COUNT(*) FROM canonical_ingredient").fetchone()
-        if count > 0:
-            return 0
-
         fixture_path = FIXTURES_DIR / "canonical_ingredients.json"
         items = json.loads(fixture_path.read_text())
-        conn.executemany(
+        cur = conn.executemany(
             """
-            INSERT INTO canonical_ingredient
-                (name, default_unit, category, deny_flag, common_purchase_qty, common_purchase_unit)
-            VALUES (:name, :default_unit, :category, :deny_flag, :common_purchase_qty, :common_purchase_unit)
+            UPDATE canonical_ingredient
+            SET default_unit = :default_unit, category = :category, deny_flag = :deny_flag,
+                common_purchase_qty = :common_purchase_qty, common_purchase_unit = :common_purchase_unit,
+                color = :color, emoji = :emoji
+            WHERE lower(name) = lower(:name)
             """,
             items,
         )
+        updated = cur.rowcount
+
+        existing = {
+            row["name"].lower()
+            for row in conn.execute("SELECT name FROM canonical_ingredient")
+        }
+        new_items = [i for i in items if i["name"].lower() not in existing]
+        if new_items:
+            conn.executemany(
+                """
+                INSERT INTO canonical_ingredient
+                    (name, default_unit, category, deny_flag, common_purchase_qty, common_purchase_unit, color, emoji)
+                VALUES (:name, :default_unit, :category, :deny_flag, :common_purchase_qty, :common_purchase_unit, :color, :emoji)
+                """,
+                new_items,
+            )
         conn.commit()
-        return len(items)
+        return len(new_items) + (updated if updated > 0 else 0)
     finally:
         conn.close()

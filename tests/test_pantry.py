@@ -1,11 +1,11 @@
 import pytest
 
-from app.db import get_connection, seed_canonical_ingredients
+from app.db import get_connection, sync_canonical_ingredients
 
 
 @pytest.fixture(autouse=True, scope="session")
 def _seed():
-    seed_canonical_ingredients()
+    sync_canonical_ingredients()
 
 
 @pytest.fixture(autouse=True)
