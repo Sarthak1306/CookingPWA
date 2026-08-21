@@ -208,7 +208,7 @@ SPICES = [
 ]
 
 PROTEINS = [
-    ("Chicken thighs", "", False, "6", "-pack"),
+    ("Chicken thighs", "", False, "440", "gm pack"),
     ("Chicken breast", "", False, "4", "-pack"),
     ("Chicken mince", "g", False, "500", "g pack"),
     ("Whole chicken", "", False, "", ""),

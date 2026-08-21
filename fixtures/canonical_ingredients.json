@@ -1884,8 +1884,8 @@
     "default_unit": "",
     "category": "Proteins",
     "deny_flag": false,
-    "common_purchase_qty": "6",
-    "common_purchase_unit": "-pack",
+    "common_purchase_qty": "440",
+    "common_purchase_unit": "gm pack",
     "color": "#e8b8a8",
     "emoji": "\ud83c\udf57"
   },

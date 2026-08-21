@@ -79,6 +79,7 @@
 }
 
 .pantry__scroll {
+  position: relative;
   flex: 1;
   overflow-y: auto;
   padding: 0 20px 24px;
@@ -190,9 +191,9 @@
 }
 
 .pantry__restock-plus {
-  font-size: 20px;
-  line-height: 1;
-  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 700;
 }
 
 .pantry__restock-pack {

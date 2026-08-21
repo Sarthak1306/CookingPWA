@@ -179,6 +179,59 @@ def test_suggest_rejects_denied_ingredient_after_retry(auth_client, monkeypatch)
     assert "salmon" in status["error"].lower()
 
 
+def test_exclude_recipe_ids_tells_model_what_was_already_shown(auth_client, monkeypatch):
+    chicken = auth_client.post("/api/pantry", json={"name": "Chicken thighs"}).json()
+
+    _script(
+        monkeypatch,
+        [
+            _tool_call_message("get_pantry", {}),
+            _final_message(
+                {
+                    "results": [
+                        {
+                            "source": "new",
+                            "title": "First Suggestion",
+                            "cuisine": "Test",
+                            "est_minutes": 20,
+                            "keeps_well": False,
+                            "difficulty": "easy",
+                            "base_servings": 2,
+                            "have_pantry_item_ids": [chicken["id"]],
+                            "missing": [],
+                            "steps": [],
+                        }
+                    ]
+                }
+            ),
+        ],
+    )
+    job = auth_client.post("/api/suggest", json={"query": "chicken"}).json()
+
+    import asyncio
+
+    asyncio.run(_process_job(job["job_id"]))
+    first_recipe_id = auth_client.get(f"/api/jobs/{job['job_id']}").json()["recipes"][0]["id"]
+
+    seen_user_message = {}
+
+    async def fake_chat_completion(messages, tools=None):
+        seen_user_message["content"] = messages[1]["content"]
+        return _final_message({"results": []})
+
+    monkeypatch.setattr(openrouter_module, "chat_completion", fake_chat_completion)
+    import app.llm.suggest as suggest_module
+
+    monkeypatch.setattr(suggest_module, "chat_completion", fake_chat_completion)
+
+    job2 = auth_client.post(
+        "/api/suggest", json={"query": "chicken", "exclude_recipe_ids": [first_recipe_id]}
+    ).json()
+    asyncio.run(_process_job(job2["job_id"]))
+
+    assert "First Suggestion" in seen_user_message["content"]
+
+
 def test_avoid_chip_excludes_pantry_item_from_tool_result(auth_client, monkeypatch):
     onions = auth_client.post("/api/pantry", json={"name": "Onions"}).json()
     auth_client.post("/api/pantry", json={"name": "Rice"})

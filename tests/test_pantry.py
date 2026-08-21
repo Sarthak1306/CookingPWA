@@ -40,6 +40,30 @@ def test_add_item_with_unknown_name_creates_canonical_ingredient(auth_client):
     assert resp.json()["category"] == "Other"
 
 
+def test_add_item_with_explicit_category_overrides_fallback(auth_client):
+    resp = auth_client.post(
+        "/api/pantry", json={"name": "Nutritional yeast v2", "category": "Grains"}
+    )
+    assert resp.status_code == 201
+    assert resp.json()["category"] == "Grains"
+
+
+def test_editing_category_of_existing_ingredient_recategorizes_it(auth_client):
+    added = auth_client.post("/api/pantry", json={"name": "Yogurt drink"}).json()
+    assert added["category"] == "Other"
+
+    edited = auth_client.patch(
+        f"/api/pantry/{added['id']}", json={"name": "Yogurt drink", "category": "Dairy"}
+    ).json()
+    assert edited["category"] == "Dairy"
+
+    # Sticks even on a plain re-save without touching category again.
+    resaved = auth_client.patch(
+        f"/api/pantry/{added['id']}", json={"name": "Yogurt drink", "qty_label": "1L"}
+    ).json()
+    assert resaved["category"] == "Dairy"
+
+
 def test_adding_same_name_twice_updates_in_place(auth_client):
     first = auth_client.post("/api/pantry", json={"name": "Garlic", "qty_label": "bulb"}).json()
     second = auth_client.post(

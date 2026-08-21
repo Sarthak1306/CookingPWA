@@ -16,6 +16,7 @@ REWRITE_EVERY_N_COOKS = 10
 class SuggestBody(BaseModel):
     query: str = ""
     avoid: list[str] = []
+    exclude_recipe_ids: list[int] = []
 
 
 class RateBody(BaseModel):
@@ -29,7 +30,9 @@ def create_suggest_job(body: SuggestBody, conn: sqlite3.Connection = Depends(get
     except SpendCapExceeded as exc:
         raise HTTPException(status_code=429, detail=str(exc))
 
-    payload = json.dumps({"query": body.query, "avoid": body.avoid})
+    payload = json.dumps(
+        {"query": body.query, "avoid": body.avoid, "exclude_recipe_ids": body.exclude_recipe_ids}
+    )
     cur = conn.execute(
         "INSERT INTO job (kind, payload_json, status) VALUES ('suggest', ?, 'pending')",
         (payload,),

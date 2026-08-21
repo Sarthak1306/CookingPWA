@@ -303,3 +303,19 @@
 .suggest__result-difficulty {
   text-transform: capitalize;
 }
+
+.suggest__more {
+  width: 100%;
+  min-height: 54px;
+  border: 1px dashed rgba(32, 30, 29, 0.3);
+  border-radius: 999px;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-muted-70);
+  cursor: pointer;
+}
+
+.suggest__more:hover {
+  background: rgba(32, 30, 29, 0.05);
+}

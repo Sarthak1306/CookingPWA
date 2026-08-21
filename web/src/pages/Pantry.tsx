@@ -3,7 +3,7 @@ import { ApiError, getPantry, restockPantryItem } from '../api'
 import type { PantryItem } from '../types'
 import './Pantry.css'
 
-const CATEGORIES = ['Produce', 'Dairy', 'Grains', 'Spices', 'Proteins', 'Other']
+export const CATEGORIES = ['Produce', 'Dairy', 'Grains', 'Spices', 'Proteins', 'Other']
 
 export default function Pantry({
   onOpenAdd,
@@ -116,7 +116,7 @@ export default function Pantry({
                       onClick={() => handleRestock(item)}
                       aria-label={`Restock ${item.name}`}
                     >
-                      <span className="pantry__restock-plus">+1</span>
+                      <span className="pantry__restock-plus">Restock</span>
                       <span className="pantry__restock-pack">{item.pack || 'pack'}</span>
                     </button>
                   </div>

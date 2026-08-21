@@ -59,13 +59,18 @@ export function searchIngredients(q: string) {
   return request<IngredientSuggestion[]>(`/api/ingredients?q=${encodeURIComponent(q)}`)
 }
 
-export function addPantryItem(body: { name: string; qty_label?: string; is_low?: boolean }) {
+export function addPantryItem(body: {
+  name: string
+  qty_label?: string
+  is_low?: boolean
+  category?: string
+}) {
   return request<PantryItem>('/api/pantry', { method: 'POST', body: JSON.stringify(body) })
 }
 
 export function editPantryItem(
   id: number,
-  body: { name: string; qty_label?: string; is_low?: boolean },
+  body: { name: string; qty_label?: string; is_low?: boolean; category?: string },
 ) {
   return request<PantryItem>(`/api/pantry/${id}`, { method: 'PATCH', body: JSON.stringify(body) })
 }
@@ -78,7 +83,7 @@ export function markOutOfStock(id: number) {
   return request<{ ok: boolean }>(`/api/pantry/${id}/out-of-stock`, { method: 'POST' })
 }
 
-export function createSuggestJob(body: { query: string; avoid: string[] }) {
+export function createSuggestJob(body: { query: string; avoid: string[]; exclude_recipe_ids?: number[] }) {
   return request<{ job_id: number }>('/api/suggest', { method: 'POST', body: JSON.stringify(body) })
 }
 

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { addPantryItem, ApiError, editPantryItem, searchIngredients } from '../api'
+import { CATEGORIES } from './Pantry'
 import type { IngredientSuggestion, PantryItem } from '../types'
 import './AddEditItem.css'
 
@@ -18,6 +19,7 @@ export default function AddEditItem({
   const [name, setName] = useState(item?.name ?? '')
   const [qty, setQty] = useState(item?.qty_label ?? '')
   const [low, setLow] = useState(item?.is_low ?? false)
+  const [category, setCategory] = useState(item?.category ?? '')
   const [suggestions, setSuggestions] = useState<IngredientSuggestion[]>([])
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState('')
@@ -46,6 +48,7 @@ export default function AddEditItem({
   function pickSuggestion(s: IngredientSuggestion) {
     setName(s.name)
     setQty(s.pack)
+    setCategory(s.category)
     setSuggestions([])
   }
 
@@ -61,8 +64,18 @@ export default function AddEditItem({
     setError('')
     try {
       const saved = isEdit
-        ? await editPantryItem(item.id, { name: trimmed, qty_label: qty.trim(), is_low: low })
-        : await addPantryItem({ name: trimmed, qty_label: qty.trim(), is_low: low })
+        ? await editPantryItem(item.id, {
+            name: trimmed,
+            qty_label: qty.trim(),
+            is_low: low,
+            category: category || undefined,
+          })
+        : await addPantryItem({
+            name: trimmed,
+            qty_label: qty.trim(),
+            is_low: low,
+            category: category || undefined,
+          })
       onFlash(isEdit ? 'Saved' : `${saved.name} added`)
       onSaved(saved)
     } catch (err) {
@@ -119,6 +132,21 @@ export default function AddEditItem({
               ))}
             </div>
           )}
+        </div>
+
+        <div>
+          <label className="add-item__label">Category — leave blank to auto-sort</label>
+          <div className="add-item__categories sc">
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                className={`add-item__category${category === cat ? ' add-item__category--active' : ''}`}
+                onClick={() => setCategory((c) => (c === cat ? '' : cat))}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
         <button className="add-item__low-toggle" onClick={() => setLow((v) => !v)}>

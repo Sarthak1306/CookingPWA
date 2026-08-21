@@ -14,6 +14,7 @@ export default function Suggest({ onOpenRecipe }: { onOpenRecipe: (id: number) =
   const [status, setStatus] = useState<Status>('idle')
   const [errorMsg, setErrorMsg] = useState('')
   const [results, setResults] = useState<RecipeSummary[]>([])
+  const [excludeIds, setExcludeIds] = useState<number[]>([])
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   useEffect(() => {
@@ -47,19 +48,21 @@ export default function Suggest({ onOpenRecipe }: { onOpenRecipe: (id: number) =
     setAvoid((a) => a.filter((x) => x !== name))
   }
 
-  async function runSuggest() {
+  async function runSuggest(excludeRecipeIds: number[] = []) {
     if (pollRef.current) clearInterval(pollRef.current)
     setStatus('loading')
     setErrorMsg('')
     setResults([])
     try {
-      const { job_id } = await createSuggestJob({ query, avoid })
+      const { job_id } = await createSuggestJob({ query, avoid, exclude_recipe_ids: excludeRecipeIds })
       pollRef.current = setInterval(async () => {
         try {
           const job = await getJob(job_id)
           if (job.status === 'done') {
             if (pollRef.current) clearInterval(pollRef.current)
-            setResults(job.recipes ?? [])
+            const recipes = job.recipes ?? []
+            setResults(recipes)
+            setExcludeIds([...excludeRecipeIds, ...recipes.map((r) => r.id)])
             setStatus('results')
           } else if (job.status === 'error') {
             if (pollRef.current) clearInterval(pollRef.current)
@@ -129,7 +132,7 @@ export default function Suggest({ onOpenRecipe }: { onOpenRecipe: (id: number) =
             )}
           </div>
         )}
-        <button className="suggest__run" onClick={runSuggest} disabled={status === 'loading'}>
+        <button className="suggest__run" onClick={() => runSuggest([])} disabled={status === 'loading'}>
           Find something
         </button>
       </div>
@@ -152,7 +155,7 @@ export default function Suggest({ onOpenRecipe }: { onOpenRecipe: (id: number) =
             <div className="suggest__error-title">Couldn't get suggestions</div>
             <div className="suggest__error-body">{errorMsg} Your pantry is unchanged.</div>
             <div className="suggest__error-actions">
-              <button className="suggest__error-retry" onClick={runSuggest}>
+              <button className="suggest__error-retry" onClick={() => runSuggest(excludeIds)}>
                 Try again
               </button>
             </div>
@@ -170,6 +173,11 @@ export default function Suggest({ onOpenRecipe }: { onOpenRecipe: (id: number) =
             )}
             {shopGroup.length > 0 && (
               <ResultGroup label="Worth a shop" items={shopGroup} onOpen={onOpenRecipe} />
+            )}
+            {results.length > 0 && (
+              <button className="suggest__more" onClick={() => runSuggest(excludeIds)}>
+                Show me something else
+              </button>
             )}
           </div>
         )}

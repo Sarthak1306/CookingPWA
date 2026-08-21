@@ -196,12 +196,36 @@ def _save_new_recipe(conn: sqlite3.Connection, result: dict) -> int:
     return recipe_id
 
 
-async def run_suggest(conn: sqlite3.Connection, query: str, avoid: list[str]) -> dict:
+def _recipe_titles(conn: sqlite3.Connection, recipe_ids: list[int]) -> list[str]:
+    if not recipe_ids:
+        return []
+    placeholders = ",".join("?" * len(recipe_ids))
+    rows = conn.execute(
+        f"SELECT title FROM recipe WHERE id IN ({placeholders})", recipe_ids
+    ).fetchall()
+    return [r["title"] for r in rows]
+
+
+async def run_suggest(
+    conn: sqlite3.Connection,
+    query: str,
+    avoid: list[str],
+    exclude_recipe_ids: list[int] | None = None,
+) -> dict:
     exclude_ids = _exclude_ingredient_ids(conn, avoid)
     avoid_note = f" Avoid: {', '.join(avoid)}." if avoid else ""
+    already_shown = _recipe_titles(conn, exclude_recipe_ids or [])
+    already_shown_note = (
+        f" I've already seen these, suggest something different: {', '.join(already_shown)}."
+        if already_shown
+        else ""
+    )
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": f"{query.strip() or 'Something good for tonight.'}{avoid_note}"},
+        {
+            "role": "user",
+            "content": f"{query.strip() or 'Something good for tonight.'}{avoid_note}{already_shown_note}",
+        },
     ]
 
     parsed = await _run_loop(conn, messages, exclude_ids)

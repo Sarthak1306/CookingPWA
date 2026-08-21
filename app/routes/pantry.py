@@ -48,13 +48,14 @@ def _upsert_pantry_item(
     qty_label: str,
     is_low: bool,
     editing_pantry_item_id: int | None,
+    category: str | None = None,
 ) -> int:
     """Shared by add and edit. Resolves `name` to a canonical ingredient
     (creating one if it's new), then writes exactly one pantry_item for
     that ingredient — merging into an existing row rather than ever
     tripping the ingredient_id UNIQUE constraint, since low friction beats
     a form that can reject you for typing an existing item's name."""
-    ingredient_id = resolve_ingredient_id(conn, name)
+    ingredient_id = resolve_ingredient_id(conn, name, category)
 
     if editing_pantry_item_id is not None:
         current = conn.execute(
@@ -89,12 +90,14 @@ class AddItemBody(BaseModel):
     name: str
     qty_label: str = ""
     is_low: bool = False
+    category: str | None = None
 
 
 class EditItemBody(BaseModel):
     name: str
     qty_label: str = ""
     is_low: bool = False
+    category: str | None = None
 
 
 @router.get("/pantry")
@@ -161,7 +164,7 @@ def add_pantry_item(body: AddItemBody, conn: sqlite3.Connection = Depends(get_db
     if not name:
         raise HTTPException(status_code=400, detail="Ingredient name is required")
 
-    item_id = _upsert_pantry_item(conn, name, body.qty_label.strip(), body.is_low, None)
+    item_id = _upsert_pantry_item(conn, name, body.qty_label.strip(), body.is_low, None, body.category)
     conn.commit()
     return _pantry_item_out(conn, item_id)
 
@@ -174,7 +177,9 @@ def edit_pantry_item(
     if not name:
         raise HTTPException(status_code=400, detail="Ingredient name is required")
 
-    item_id = _upsert_pantry_item(conn, name, body.qty_label.strip(), body.is_low, pantry_item_id)
+    item_id = _upsert_pantry_item(
+        conn, name, body.qty_label.strip(), body.is_low, pantry_item_id, body.category
+    )
     conn.commit()
     return _pantry_item_out(conn, item_id)
 

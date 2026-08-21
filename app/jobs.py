@@ -30,7 +30,12 @@ async def _process_job(job_id: int) -> None:
             payload = json.loads(row["payload_json"])
 
             if row["kind"] == "suggest":
-                result = await run_suggest(conn, payload["query"], payload.get("avoid", []))
+                result = await run_suggest(
+                    conn,
+                    payload["query"],
+                    payload.get("avoid", []),
+                    payload.get("exclude_recipe_ids", []),
+                )
             elif row["kind"] == "rewrite_profile":
                 result = await run_rewrite_profile(conn)
             else:
